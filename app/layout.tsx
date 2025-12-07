@@ -19,11 +19,11 @@ export const metadata: Metadata = {
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png", 
+        url: "/icon-dark-32x32.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "/Navicom.png",
         type: "image/svg+xml",
       },
     ],
@@ -38,8 +38,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth dark">
-      <body className={`font-sans antialiased bg-black text-white`}>
-        {children}
+      <body
+        className={`font-sans antialiased bg-black text-white relative overflow-hidden`}
+      >
+        
+        
+
+        {/* EVERYTHING ELSE ABOVE IT */}
+        <div className="relative z-[5]">
+          {children}
+        </div>
+
         <Analytics />
       </body>
     </html>

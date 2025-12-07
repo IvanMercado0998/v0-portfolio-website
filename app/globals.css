@@ -3,8 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* -----------------------------------
+   ROOT VARIABLES — LIGHT THEME
+----------------------------------- */
 :root {
-  /* Light theme */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -40,8 +42,10 @@
   --sidebar-ring: oklch(0.145 0 0);
 }
 
+/* -----------------------------------
+   DARK THEME
+----------------------------------- */
 .dark {
-  /* Dark theme - pure black and white */
   --background: oklch(0.08 0 0);
   --foreground: oklch(0.96 0 0);
   --card: oklch(0.12 0 0);
@@ -75,14 +79,17 @@
   --sidebar-border: oklch(0.2 0 0);
   --sidebar-ring: oklch(0.96 0 0);
 
-  /* Add gradient colors for pop of color */
   --gradient-start: #3b82f6;
   --gradient-end: #8b5cf6;
 }
 
+/* -----------------------------------
+   TAILWIND THEME MAPPINGS
+----------------------------------- */
 @theme inline {
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -107,10 +114,12 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -121,17 +130,41 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* -----------------------------------
+   BASE LAYER FIX — SCROLL SAFE
+----------------------------------- */
 @layer base {
+
+  /* ❌ ORIGINAL PROBLEM — removed
+     * { @apply border-border outline-ring/50; }
+  */
+
+  /* ✅ Border safe globally */
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
+
+  /* ✅ Outline ONLY for focusable elements */
+  :where(a, button, input, textarea, select) {
+    @apply outline-ring/50;
+  }
+
   body {
     @apply bg-background text-foreground;
+    overflow-y: auto; /* Ensure scroll is always allowed */
+  }
+
+  html, body, #__next {
+    min-height: 100%;
+    height: auto;
+    overflow-y: auto;
   }
 }
 
+/* -----------------------------------
+   COMPONENTS
+----------------------------------- */
 @layer components {
-  /* Updated all components for black/white theme */
   .section-title {
     @apply text-4xl md:text-5xl font-bold text-balance mb-12 tracking-tight;
   }
@@ -148,7 +181,6 @@
     @apply border border-white/20 hover:border-white/40 transition-colors;
   }
 
-  /* Add glassmorphism utilities */
   .glass {
     @apply backdrop-blur-lg bg-white/10 border border-white/20;
   }
@@ -157,7 +189,6 @@
     @apply backdrop-blur-lg bg-black/30 border border-white/10;
   }
 
-  /* Add gradient accent utilities */
   .gradient-accent {
     background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
   }

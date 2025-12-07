@@ -29,18 +29,18 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-4">Connect</h3>
             <ul className="space-y-2 text-white/60 text-sm">
               <li>
-                <a href="https://github.com" className="hover:text-white transition-colors">
+                <a href="https://github.com/IvanMercado0998" className="hover:text-white transition-colors">  
                   GitHub
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com" className="hover:text-white transition-colors">
+                <a href="www.linkedin.com/in/ivan-mercado-" className="hover:text-white transition-colors">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com" className="hover:text-white transition-colors">
-                  Twitter
+                <a href="https://www.facebook.com/ivan.mercado.7127" className="hover:text-white transition-colors">
+                  Facebook
                 </a>
               </li>
             </ul>

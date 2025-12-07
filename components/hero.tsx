@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import Image from "next/image"
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -13,9 +14,11 @@ export default function Hero() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
+    // Set canvas size
     canvas.width = canvas.offsetWidth
     canvas.height = canvas.offsetHeight
 
+    // Track mouse
     const handleMouseMove = (e: MouseEvent) => {
       mouseRef.current = {
         x: e.clientX,
@@ -25,58 +28,86 @@ export default function Hero() {
 
     window.addEventListener("mousemove", handleMouseMove)
 
-    const drawRoboticArm = (time: number) => {
+    // REALISTIC FLASHLIGHT EFFECT
+    const drawFlashlight = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.05)"
-      ctx.lineWidth = 2
 
-      const centerX = canvas.width / 2
-      const centerY = canvas.height / 2
+      // Base dark background
+      ctx.fillStyle = "black"
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      // Base
+      const { x, y } = mouseRef.current
+
+      // Main bright radius
+      const coreRadius = 130
+      const glowRadius = 280
+      const vignetteRadius = 900
+
+      // ---- 1. Bright Core (strong white hotspot) ----
+      const core = ctx.createRadialGradient(x, y, 0, x, y, coreRadius)
+      core.addColorStop(0, "rgba(255,255,255,0.75)")
+      core.addColorStop(1, "rgba(255,255,255,0)")
+      ctx.fillStyle = core
       ctx.beginPath()
-      ctx.arc(centerX, centerY, 30, 0, Math.PI * 2)
-      ctx.stroke()
+      ctx.arc(x, y, coreRadius, 0, Math.PI * 2)
+      ctx.fill()
 
-      // Arm segments with rotation
-      const angle1 = Math.sin(time * 0.001) * 0.5
-      const angle2 = Math.cos(time * 0.001) * 0.3
-
-      // Segment 1
-      const x1 = centerX + Math.cos(angle1) * 100
-      const y1 = centerY + Math.sin(angle1) * 100
-
+      // ---- 2. Soft Glow Halo ----
+      const glow = ctx.createRadialGradient(x, y, coreRadius, x, y, glowRadius)
+      glow.addColorStop(0, "rgba(255,255,255,0.18)")
+      glow.addColorStop(1, "rgba(0,0,0,0)")
+      ctx.fillStyle = glow
       ctx.beginPath()
-      ctx.moveTo(centerX, centerY)
-      ctx.lineTo(x1, y1)
-      ctx.stroke()
+      ctx.arc(x, y, glowRadius, 0, Math.PI * 2)
+      ctx.fill()
 
-      // Segment 2
-      const x2 = x1 + Math.cos(angle1 + angle2) * 80
-      const y2 = y1 + Math.sin(angle1 + angle2) * 80
-
+      // ---- 3. Fog + Bloom Layer (smooth atmospheric look) ----
+      ctx.globalAlpha = 0.12
       ctx.beginPath()
-      ctx.moveTo(x1, y1)
-      ctx.lineTo(x2, y2)
-      ctx.stroke()
+      ctx.arc(x, y, glowRadius * 1.4, 0, Math.PI * 2)
+      ctx.fillStyle = "white"
+      ctx.fill()
+      ctx.globalAlpha = 1
 
-      // End effector
-      ctx.beginPath()
-      ctx.arc(x2, y2, 10, 0, Math.PI * 2)
-      ctx.stroke()
+      // ---- 4. Grain Noise (barely visible realism) ----
+      const noiseIntensity = 35 // lower = softer
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+      const pixels = imageData.data
+
+      for (let i = 0; i < pixels.length; i += 4) {
+        const noise = (Math.random() - 0.5) * noiseIntensity
+        pixels[i] += noise
+        pixels[i + 1] += noise
+        pixels[i + 2] += noise
+      }
+      ctx.putImageData(imageData, 0, 0)
+
+      // ---- 5. Vignette (cinematic darkness on edges) ----
+      const vignette = ctx.createRadialGradient(
+        canvas.width / 2,
+        canvas.height / 2,
+        0,
+        canvas.width / 2,
+        canvas.height / 2,
+        vignetteRadius
+      )
+      vignette.addColorStop(0, "rgba(0,0,0,0)")
+      vignette.addColorStop(1, "rgba(0,0,0,0.7)")
+
+      ctx.fillStyle = vignette
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
     }
 
-    let animationId: number
-    const animate = (time: number) => {
-      drawRoboticArm(time)
-      animationId = requestAnimationFrame(animate)
+    // Animation loop
+    const animate = () => {
+      drawFlashlight()
+      requestAnimationFrame(animate)
     }
 
-    animationId = requestAnimationFrame(animate)
+    animate()
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove)
-      cancelAnimationFrame(animationId)
     }
   }, [])
 
@@ -84,7 +115,7 @@ export default function Hero() {
     <section id="about" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="absolute inset-0 opacity-40 pointer-events-none"
         style={{ width: "100%", height: "100%" }}
       />
 
@@ -118,11 +149,16 @@ export default function Hero() {
               </a>
             </div>
           </div>
-          <div className="h-96 rounded-lg border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm hover:border-white/40 transition-all">
-            <div className="text-center">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-white/30 to-white/10 mx-auto mb-4"></div>
-              <p className="text-white/40">Portrait coming soon</p>
-            </div>
+
+          <div className="h-96 rounded-lg border border-white/20 overflow-hidden bg-white/5 backdrop-blur-sm hover:border-white/40 transition-all flex items-center justify-center">
+            <Image
+              src="/ivanmercado.jpg"
+              alt="Ivan Mercado Portrait"
+              fill
+              className="object-cover"
+              style={{ objectPosition: "center 60%", transform: "scale(1.2)" }}
+              sizes="100vw"
+            />
           </div>
         </div>
       </div>
