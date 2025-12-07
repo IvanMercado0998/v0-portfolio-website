@@ -1,25 +1,83 @@
+// implement glass morphism effect on project cards
+// enhance background slideshow with smooth transitions and overlay
+// add lightbox modal for project media viewing
 "use client"
 
-import type React from "react"
+import { useState, useEffect, useRef } from "react"
+import { ChevronDown, X, Play, Maximize2, ChevronLeft, ChevronRight } from "lucide-react"
 
-import { useState } from "react"
-import { ChevronDown, Upload, X } from "lucide-react"
+type MediaType = "image" | "video"
+
+interface ProjectMedia {
+  type: MediaType
+  src: string
+  alt?: string
+}
+
+interface Project {
+  id: number
+  title: string
+  company?: string
+  category?: string
+  year?: string
+  description?: string
+  overview?: string
+  engineeringWork?: string[]
+  tags?: string[]
+  skills?: string[]
+  media?: ProjectMedia[]
+}
 
 export default function Projects() {
   const [expandedId, setExpandedId] = useState<number | null>(null)
   const [selectedCategory, setSelectedCategory] = useState<string>("all")
-  const [projectMedia, setProjectMedia] = useState<{ [key: number]: string[] }>({})
+  const [selectedMedia, setSelectedMedia] = useState<ProjectMedia | null>(null)
+  
+  // Slider state
+  const sliderRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
 
-  const projects = [
+  // Background slideshow state
+  const [bgIndex, setBgIndex] = useState(0)
+  const backgroundImages = [
+    "/ClarkAirbaseTesting.jpg",
+    "/ClarkAirbaseTesting1.jpg",
+    "/SmartGenTesting1.jpg",
+    "/TitanRamBattle.jpg",
+    "/TitanRamFinalBuild1.jpg",
+    "/NAVI.png",
+    "/TitanRam3D.png",
+    "/TitanRamTesting .jpg",
+  ]
+
+  useEffect(() => {
+    if (selectedMedia) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+    return () => { document.body.style.overflow = "auto" }
+  }, [selectedMedia])
+
+  // Background slideshow cycling
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBgIndex((prev) => (prev + 1) % backgroundImages.length)
+    }, 5000) // Change every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const projects: Project[] = [
     {
       id: 1,
       title: "NAVI — Smart Infotainment & Vehicle Safety System",
-      company: "NAVICOM",
+      company: "NAVICOM | Founded: Ivan Mercado",
       category: "Embedded Systems",
       year: "2024–2025",
       description: "Tesla-style infotainment and safety enhancement system built from scratch for legacy vehicles.",
-      overview:
-        "A comprehensive vehicle head unit featuring multi-camera blind spot monitoring, reverse camera auto-triggering, Sentry Mode with motion detection, GPS tracking, and local LLM voice commands.",
+      overview: "A comprehensive vehicle head unit featuring multi-camera blind spot monitoring, reverse camera auto-triggering, Sentry Mode with motion detection, GPS tracking, and local LLM voice commands.",
       engineeringWork: [
         "ESP32 signal handling for ignition, reverse, turn signals",
         "Multi-camera RTSP stream routing and management",
@@ -31,7 +89,12 @@ export default function Projects() {
         "Local LLM installation and optimization",
       ],
       tags: ["ESP32-C3", "Electron", "React", "Python", "AI/ML", "Automotive"],
-      skills: ["Embedded Systems", "AI Integration", "UI/UX Design", "Networking", "Power Electronics"],
+      skills: ["Automotive UI", "Embedded Systems", "AI Integration", "UI/UX Design", "Networking", "Power Electronics"],
+      media: [
+        { type: "image", src: "/NAVI.png", alt: "Main Dashboard UI" },
+        { type: "image", src: "/NAVIapps.png", alt: "Navigation & Apps" },
+        { type: "video", src: "/NAVI.mp4", alt: "System Demo" }
+      ],
     },
     {
       id: 2,
@@ -40,8 +103,7 @@ export default function Projects() {
       category: "Digital Electronics",
       year: "2023–2024",
       description: "Robust PIR + IC-based counter for tracking event attendance with error-proof design.",
-      overview:
-        "Published prototype featuring dual PIR sensors with entry/exit logic, IC-based up/down counting, and fully modular PCB layout for field repairs.",
+      overview: "Published prototype featuring dual PIR sensors with entry/exit logic, IC-based up/down counting, and fully modular PCB layout for field repairs.",
       engineeringWork: [
         "Designed complete circuit using IC counter logic",
         "Implemented dual PIR detection and signal conditioning",
@@ -52,16 +114,19 @@ export default function Projects() {
       ],
       tags: ["PIR Sensors", "Digital ICs", "PCB Design", "Analog Electronics", "Signal Conditioning"],
       skills: ["Circuit Design", "PCB Layout", "Sensor Integration", "Systems Engineering"],
+      media: [
+        { type: "image", src: "/STMCountingMachine.jpg", alt: "Prototype" },
+        { type: "image", src: "/STMCountingMachine1.jpg", alt: "Testing" },
+      ],
     },
     {
       id: 3,
       title: "TITAN RAM — Combat Robot Motor Control System",
-      company: "Personal Engineering Project",
+      company: "University Project",
       category: "Robotics",
       year: "2025",
-      description: "Complete motor control system for 4-motor combat robot with wireless Bluetooth command.",
-      overview:
-        "Fully documented system integrating Arduino Uno, ESP32, dual BTS7960 motor drivers, and 12V/640RPM motors with wireless smartphone control.",
+      description: "Complete motor control system for 2-motor combat robot with wireless Bluetooth command.",
+      overview: "Fully documented system integrating Arduino Uno, ESP32, dual BTS7960 motor drivers, and 12V/640RPM motors with wireless smartphone control.",
       engineeringWork: [
         "Designed high-power motor driver circuits (BTS7960)",
         "Implemented PWM speed control logic for 4-motor coordination",
@@ -73,16 +138,21 @@ export default function Projects() {
       ],
       tags: ["Arduino", "ESP32", "Motor Drivers", "PWM Control", "Bluetooth", "Power Electronics"],
       skills: ["Motor Control", "Power Electronics", "Embedded C", "Wireless Communication", "PCB Design"],
+      media: [
+        { type: "image", src: "/TitanRam3D.png", alt: "3D Design" },
+        { type: "image", src: "/TitanRamTesting .jpg", alt: "Prototype Testing" },
+        { type: "image", src: "/TitanRamFinalBuild1.jpg", alt: "Final Build" },
+        { type: "image", src: "/TitanRamBattle.jpg", alt: "Battle Bots" },
+      ],
     },
     {
       id: 4,
       title: "STM32F429I-DISC1 Counter Machine",
-      company: "University (Practicum Project)",
+      company: "DSDC Internship (Practicum Project)",
       category: "Microcontroller Systems",
       year: "2025",
       description: "TouchGFX-powered admin counter system with PIR sensor and secure event logging.",
-      overview:
-        "Embedded system featuring STM32F429 MCU, PIR motion detection, keypad input, LED indicators, PWM buzzer, RTC, and color touchscreen display.",
+      overview: "Embedded system featuring STM32F429 MCU, PIR motion detection, keypad input, LED indicators, PWM buzzer, RTC, and color touchscreen display.",
       engineeringWork: [
         "Reconfigured STM32 HAL GPIO driver for custom pin mapping",
         "Integrated TouchGFX framework with real-time callbacks",
@@ -94,33 +164,38 @@ export default function Projects() {
       ],
       tags: ["STM32", "TouchGFX", "HAL", "GPIO Interrupts", "PWM", "Embedded UI"],
       skills: ["Microcontroller Programming", "Real-time Systems", "Interrupt Handling", "UI Development"],
+      media: [
+        { type: "image", src: "/STMCountingMachine.jpg", alt: "Prototype" },
+        { type: "image", src: "/STMCountingMachine1.jpg", alt: "Prototype" },
+      ],
     },
     {
       id: 5,
-      title: "Industrial Motor Control & Electrical Systems",
+      title: "IntelliLite, DeapSea and SmartGen Generator Reconfiguration & ATS Integration",
       company: "RVMercado Engineering Corporation",
-      category: "Industrial Electronics",
-      year: "2022–2025",
-      description: "Real-world industrial engineering: motor rewinding, AVR calibration, and 3-phase system design.",
-      overview:
-        "Professional field service work serving major industrial clients including Metro Clark Waste Management, Balibago Waterworks, and Airnergy Renewables.",
+      category: "Power Systems & Industrial Automation",
+      year: "2024–2025",
+      description: "Reconfiguration, diagnostics, and reprogramming of IntelliLite generator controllers with Automatic Transfer Switch (ATS) integration.",
+      overview: "Performed full-site generator rehabilitation including IntelliLite control logic updates, ATS communication repairs, AC sensing calibration, battery maintenance system installation.",
       engineeringWork: [
-        "Rewound submersible motors (230V/460V AC)",
-        "Diagnosed and calibrated Automatic Voltage Regulators (AVRs)",
-        "Designed Motor Control Units (MCUs) for industrial applications",
-        "Installed and commissioned 3-phase water pump systems",
-        "Tested motor insulation resistance and current draw",
-        "Troubleshot industrial electrical faults",
-        "Replaced magnetic contactors, overload relays, and protection circuits",
-        "Built custom MCC (Motor Control Center) panels",
+        "Reconfigured IntelliLite controller parameters using IntelliConfig",
+        "Integrated ATS logic: utility sensing, generator sensing, and transfer sequencing",
+        "Calibrated voltage, frequency, and AC phase rotation sensing",
+        "Fixed wiring faults and corrected ATS feedback/contact signals",
+        "Programmed safety limits: overspeed, coolant temperature, low oil pressure",
+        "Diagnosed controller faults and communication errors",
+        "Installed smart trickle-charging devices for long-term battery maintenance",
+        "Performed full functional testing: utility failure, generator takeover, and cooldown",
       ],
-      tags: ["3-Phase Motors", "Industrial Controls", "Electrical Safety", "Field Service", "Motor Rewinding"],
-      skills: [
-        "Industrial Electrical Systems",
-        "Motor Engineering",
-        "Diagnostics",
-        "Safety Standards",
-        "Field Service",
+      tags: ["IntelliLite Controllers", "Automatic Transfer Switch", "Generator Systems", "Power Automation", "Battery Maintenance"],
+      skills: ["Generator Control Systems", "ATS Integration", "Diagnostics & Calibration", "Power System Safety", "Industrial Field Service"],
+      media: [
+        { type: "image", src: "/SmartGenTesting1.jpg", alt: "SmartGen Integration Testing" },
+        { type: "image", src: "/ATSCharger.jpg", alt: "ATS Integration" },
+        { type: "image", src: "/InteliLiteRecon.jpg", alt: "InteliLite AMF 20 Reconfiguration" },
+        { type: "image", src: "/InteliLite.jpg", alt: "AMF 20 Reconfiguration" },
+        { type: "image", src: "/ClarkAirbaseTesting.jpg", alt: "Clark Airbase Final Testing" },
+        { type: "image", src: "/ClarkAirbaseTesting1.jpg", alt: "Clark Airbase Demo" },
       ],
     },
     {
@@ -130,8 +205,7 @@ export default function Projects() {
       category: "Systems Software",
       year: "2024–2025",
       description: "Custom Windows optimization tool with automated cleanup, service management, and modern UI.",
-      overview:
-        "Desktop application built with PowerShell backend and ElectronJS frontend for system-wide Windows optimization and maintenance.",
+      overview: "Desktop application built with PowerShell backend and ElectronJS frontend for system-wide Windows optimization and maintenance.",
       engineeringWork: [
         "Engineered PowerShell scripts for system operations",
         "Designed WinForms UI with responsive controls",
@@ -143,6 +217,7 @@ export default function Projects() {
       ],
       tags: ["PowerShell", "WinForms", "ElectronJS", "Figma", "Windows API"],
       skills: ["Systems Programming", "Desktop Development", "UI/UX Design", "Performance Optimization"],
+      media: [],
     },
     {
       id: 7,
@@ -151,8 +226,7 @@ export default function Projects() {
       category: "Desktop Application",
       year: "2024",
       description: "Expanded C++ GUI application with file I/O, data persistence, and modular architecture.",
-      overview:
-        "Evolution from console application to full GUI-based desktop system with file-based persistence and modular object-oriented design.",
+      overview: "Evolution from console application to full GUI-based desktop system with file-based persistence and modular object-oriented design.",
       engineeringWork: [
         "Migrated console codebase to GUI-based architecture",
         "Implemented file I/O for data persistence",
@@ -164,113 +238,88 @@ export default function Projects() {
       ],
       tags: ["C++", "GUI Development", "File I/O", "OOP Design", "Data Structures"],
       skills: ["Software Architecture", "C++ Development", "UI Design", "Data Management"],
-    },
-    {
-      id: 8,
-      title: "ESP32-C3 OBD-II Reader Integration",
-      company: "NAVICOM",
-      category: "Automotive Electronics",
-      year: "2024–2025",
-      description: "OBD-II telemetry reader integrated with NAVI infotainment display system.",
-      overview:
-        "Automotive diagnostic module reading real-time vehicle parameters and error codes for NAVI display integration.",
-      engineeringWork: [
-        "Implemented OBD-II PID protocol communication",
-        "Configured Bluetooth/WiFi telemetry transmission",
-        "Built vehicle data parsing (speed, RPM, throttle, error codes)",
-        "Integrated telemetry feed into NAVI UI",
-        "Designed data buffering for reliability",
-        "Implemented error code interpretation system",
-      ],
-      tags: ["OBD-II", "ESP32", "Automotive Protocols", "Bluetooth", "Telemetry"],
-      skills: ["Automotive Electronics", "Communication Protocols", "Embedded Systems"],
-    },
-    {
-      id: 9,
-      title: "Home Server (Proxmox + Ubuntu)",
-      company: "NAVICOM Cloud",
-      category: "DevOps / Infrastructure",
-      year: "2024–2025",
-      description: "Virtualized home lab with Nginx reverse proxy, containers, and hosting services.",
-      overview:
-        "Professional DevOps infrastructure featuring virtual machines, containerized services, and application hosting.",
-      engineeringWork: [
-        "Set up Proxmox hypervisor for bare-metal virtualization",
-        "Configured Ubuntu Server VMs with resource optimization",
-        "Deployed Nginx reverse proxy for load balancing",
-        "Containerized services using Docker",
-        "Built LXC development containers",
-        "Implemented local AI model containers",
-        "Hosted static websites and web applications",
-      ],
-      tags: ["Proxmox", "Ubuntu", "Nginx", "Docker", "Virtualization", "Linux"],
-      skills: ["Systems Administration", "DevOps", "Infrastructure as Code", "Cloud Computing"],
-    },
-    {
-      id: 10,
-      title: "Custom Car Head Unit (Mini PC + Touchscreen)",
-      company: "NAVICOM",
-      category: "Automotive UI",
-      year: "2024",
-      description: "Modern touchscreen infotainment interface for vehicle integration with NAVI compatibility.",
-      overview:
-        "Full-screen automotive UI system featuring multi-window capability, camera feeds, and offline assistant integration.",
-      engineeringWork: [
-        "Designed automotive UI/UX in Figma",
-        "Integrated Mini PC with custom touchscreen drivers",
-        "Built multi-window application framework",
-        "Implemented camera feed rendering",
-        "Created NAVI system compatibility layer",
-        "Optimized performance for automotive environment",
-      ],
-      tags: ["UI/UX Design", "Embedded Linux", "Automotive Systems", "Electron", "React"],
-      skills: ["Automotive UI", "Hardware Integration", "Software Optimization"],
+      media: [],
     },
   ]
 
   const categories = ["all", ...Array.from(new Set(projects.map((p) => p.category)))]
+  const filteredProjects = selectedCategory === "all" ? projects : projects.filter((p) => p.category === selectedCategory)
 
-  const filteredProjects =
-    selectedCategory === "all" ? projects : projects.filter((p) => p.category === selectedCategory)
+  const updateScrollButtons = () => {
+    if (sliderRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current
+      setCanScrollLeft(scrollLeft > 0)
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
+    }
+  }
 
-  const handleMediaUpload = (projectId: number, event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files
-    if (!files) return
+  const scroll = (direction: 'left' | 'right') => {
+    if (sliderRef.current) {
+      const scrollAmount = 350
+      const newScrollLeft = direction === 'left' 
+        ? sliderRef.current.scrollLeft - scrollAmount
+        : sliderRef.current.scrollLeft + scrollAmount
+      
+      sliderRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
+      })
+    }
+  }
 
-    Array.from(files).forEach((file) => {
-      const reader = new FileReader()
-      reader.onload = (e) => {
-        const mediaUrl = e.target?.result as string
-        setProjectMedia((prev) => ({
-          ...prev,
-          [projectId]: [...(prev[projectId] || []), mediaUrl],
-        }))
+  useEffect(() => {
+    const slider = sliderRef.current
+    if (slider) {
+      updateScrollButtons()
+      slider.addEventListener('scroll', updateScrollButtons)
+      window.addEventListener('resize', updateScrollButtons)
+      return () => {
+        slider.removeEventListener('scroll', updateScrollButtons)
+        window.removeEventListener('resize', updateScrollButtons)
       }
-      reader.readAsDataURL(file)
-    })
-  }
-
-  const removeMedia = (projectId: number, index: number) => {
-    setProjectMedia((prev) => ({
-      ...prev,
-      [projectId]: prev[projectId]?.filter((_, i) => i !== index) || [],
-    }))
-  }
+    }
+  }, [filteredProjects])
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white text-black">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="section-title mb-8 text-black">Featured Projects</h2>
+    <section id="projects" className="relative py-20 px-4 sm:px-6 lg:px-8 text-black overflow-hidden bg-white">
+      {/* Animated Background Slideshow */}
+      <div className="absolute inset-0 z-0">
+        {/* Slideshow images */}
+        {backgroundImages.map((img, index) => (
+          <div
+            key={img}
+            className="absolute inset-0 transition-opacity duration-[2000ms] ease-in-out"
+            style={{
+              opacity: index === bgIndex ? 1 : 0,
+              zIndex: 0,
+            }}
+          >
+            <img
+              src={img}
+              alt={`Background ${index + 1}`}
+              className="w-full h-full object-cover"
+              style={{ opacity: 0.6 }}
+            />
+          </div>
+        ))}
+        
+        {/* Gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white/60 pointer-events-none"></div>
+      </div>
 
+      <div className="max-w-7xl mx-auto relative z-10">
+        <h2 className="text-4xl font-bold mb-8 text-black drop-shadow-sm">Featured Projects</h2>
+
+        {/* Category Filter */}
         <div className="mb-10 flex flex-wrap gap-2">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
+              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                 selectedCategory === category
-                  ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
-                  : "bg-white text-black hover:bg-black/5 border border-black/20"
+                  ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg scale-105"
+                  : "bg-white/90 backdrop-blur-sm text-black hover:bg-white border border-gray-200 hover:border-gray-300 shadow-sm"
               }`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -278,130 +327,268 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="glass-card bg-white border-2 border-black/10 hover:border-black/30 overflow-hidden"
+        {/* Horizontal Slider */}
+        <div className="relative">
+          {/* Left Arrow */}
+          {canScrollLeft && (
+            <button
+              onClick={() => scroll('left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/95 backdrop-blur-sm hover:bg-white shadow-xl rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+              aria-label="Scroll left"
             >
-              {/* Project header */}
-              <button
-                onClick={() => setExpandedId(expandedId === project.id ? null : project.id)}
-                className="w-full p-6 flex items-start justify-between gap-4 hover:bg-black/2 transition-colors text-left"
+              <ChevronLeft size={24} className="text-gray-800" />
+            </button>
+          )}
+
+          {/* Slider Container */}
+          <div
+            ref={sliderRef}
+            className="flex overflow-x-auto gap-6 pb-6 px-2 scrollbar-hide snap-x snap-mandatory scroll-smooth"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {filteredProjects.map((project) => (
+              <div
+                key={project.id}
+                className="flex-none w-[320px] snap-start"
               >
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-lg font-bold text-black">{project.title}</h3>
-                  </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs bg-gradient-to-r from-blue-100 to-purple-100 text-black px-2 py-1 rounded font-medium">
-                      {project.company}
-                    </span>
-                    <span className="text-xs text-black/50">{project.year}</span>
-                  </div>
-                  <p className="text-black/70 text-sm">{project.description}</p>
-                </div>
-                <ChevronDown
-                  size={20}
-                  className={`text-black flex-shrink-0 transition-transform ${
-                    expandedId === project.id ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
-              {/* Expanded details */}
-              {expandedId === project.id && (
-                <div className="px-6 pb-6 border-t border-black/10 space-y-4">
-                  <div>
-                    <h4 className="text-sm font-semibold text-black mb-2">Overview</h4>
-                    <p className="text-sm text-black/70">{project.overview}</p>
-                  </div>
-
-                  <div>
-                    <h4 className="text-sm font-semibold text-black mb-2">Engineering Work</h4>
-                    <ul className="text-sm text-black/70 space-y-1">
-                      {project.engineeringWork.map((work, idx) => (
-                        <li key={idx} className="flex gap-2">
-                          <span className="text-black flex-shrink-0">→</span>
-                          <span>{work}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="text-sm font-semibold text-black mb-2">Key Skills</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.skills.map((skill) => (
-                        <span
-                          key={skill}
-                          className="px-3 py-1 text-xs bg-black/5 text-black border border-black/20 rounded-full"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="pt-2">
-                    <h4 className="text-sm font-semibold text-black mb-2">Technologies</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 text-xs bg-black/10 text-black border border-black/20 rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-black/10">
-                    <h4 className="text-sm font-semibold text-black mb-3">Project Media (Photos/Videos)</h4>
-
-                    {/* Media upload input */}
-                    <label className="flex items-center justify-center w-full p-4 border-2 border-dashed border-black/20 rounded-lg hover:border-blue-500 hover:bg-blue-50 cursor-pointer transition-all">
-                      <div className="flex flex-col items-center gap-2">
-                        <Upload size={20} className="text-black/50" />
-                        <span className="text-xs text-black/50">Click to upload photos or videos</span>
-                      </div>
-                      <input
-                        type="file"
-                        multiple
-                        accept="image/*,video/*"
-                        onChange={(e) => handleMediaUpload(project.id, e)}
-                        className="hidden"
-                      />
-                    </label>
-
-                    {/* Display uploaded media */}
-                    {projectMedia[project.id] && projectMedia[project.id].length > 0 && (
-                      <div className="mt-3 grid grid-cols-2 gap-2">
-                        {projectMedia[project.id].map((media, idx) => (
-                          <div key={idx} className="relative group">
-                            <img
-                              src={media || "/placeholder.svg"}
-                              alt={`Project media ${idx}`}
-                              className="w-full h-24 object-cover rounded-lg"
-                            />
-                            <button
-                              onClick={() => removeMedia(project.id, idx)}
-                              className="absolute top-1 right-1 bg-red-500 text-white p-1 rounded opacity-0 group-hover:opacity-100 transition-opacity"
-                            >
-                              <X size={14} />
-                            </button>
-                          </div>
-                        ))}
+                <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group h-full flex flex-col">
+                  {/* Project Image */}
+                  <div className="relative w-full h-48 overflow-hidden bg-gray-100">
+                    {project.media && project.media.length > 0 ? (
+                      project.media[0].type === 'video' ? (
+                        <video
+                          src={project.media[0].src}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          muted
+                          loop
+                          autoPlay
+                          playsInline
+                        />
+                      ) : (
+                        <img
+                          src={project.media[0].src}
+                          alt={project.media[0].alt || project.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      )
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                        <span className="text-gray-400 text-sm">No Image</span>
                       </div>
                     )}
                   </div>
+
+                  {/* Project Content */}
+                  <div className="p-5 flex-1 flex flex-col">
+                    <span className="inline-block text-xs uppercase text-purple-600 font-semibold mb-2">
+                      {project.category}
+                    </span>
+                    <h3 className="text-lg font-bold text-black mb-2 line-clamp-2 group-hover:text-purple-600 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-4 line-clamp-3 flex-1">
+                      {project.description}
+                    </p>
+
+                    {/* Bottom Info */}
+                    <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                      <div className="text-xs text-gray-500">
+                        <span>{project.year}</span>
+                      </div>
+                      <button
+                        onClick={() => setExpandedId(expandedId === project.id ? null : project.id)}
+                        className="flex items-center gap-1 text-sm font-medium text-purple-600 hover:text-purple-700 transition-colors group/btn"
+                      >
+                        Details
+                        <ChevronDown
+                          size={16}
+                          className={`transition-transform duration-300 ${
+                            expandedId === project.id ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
+
+          {/* Right Arrow */}
+          {canScrollRight && (
+            <button
+              onClick={() => scroll('right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/95 backdrop-blur-sm hover:bg-white shadow-xl rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+              aria-label="Scroll right"
+            >
+              <ChevronRight size={24} className="text-gray-800" />
+            </button>
+          )}
         </div>
+
+        {/* Expanded Project Details */}
+        {expandedId && (
+          <div className="mt-8 animate-in slide-in-from-top duration-500">
+            {(() => {
+              const project = projects.find((p) => p.id === expandedId)
+              if (!project) return null
+
+              return (
+                <div className="bg-white/95 backdrop-blur-sm border-2 border-gray-200 rounded-2xl shadow-xl p-8">
+                  <div className="grid md:grid-cols-3 gap-8">
+                    <div className="md:col-span-2 space-y-6">
+                      <div>
+                        <h3 className="text-3xl font-bold mb-3 text-black">{project.title}</h3>
+                        <p className="text-gray-700 leading-relaxed">{project.overview}</p>
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-semibold text-black mb-3 flex items-center gap-2">
+                          <span className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></span>
+                          Engineering Work
+                        </h4>
+                        <ul className="space-y-2">
+                          {project.engineeringWork?.map((work, idx) => (
+                            <li key={idx} className="flex gap-3 text-gray-700">
+                              <span className="text-purple-600 mt-1">→</span>
+                              <span>{work}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-semibold text-black mb-3">Technologies</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags?.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-4 py-1.5 text-xs font-medium bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-full hover:border-purple-300 hover:shadow-sm transition-all"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <aside className="md:col-span-1 space-y-6">
+                      <div className="border border-gray-200 rounded-xl p-5 bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm">
+                        <h5 className="text-sm font-semibold mb-4 text-black">Project Info</h5>
+                        <div className="space-y-3 text-sm">
+                          <div>
+                            <span className="font-semibold text-gray-900">Company:</span>
+                            <p className="text-gray-600 mt-1">{project.company}</p>
+                          </div>
+                          <div>
+                            <span className="font-semibold text-gray-900">Year:</span>
+                            <p className="text-gray-600 mt-1">{project.year}</p>
+                          </div>
+                          <div>
+                            <span className="font-semibold text-gray-900">Category:</span>
+                            <p className="text-gray-600 mt-1">{project.category}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Media Gallery */}
+                      {project.media && project.media.length > 0 && (
+                        <div>
+                          <h5 className="text-sm font-semibold mb-3 text-black">Project Gallery</h5>
+                          <div className="grid grid-cols-2 gap-3">
+                            {project.media.map((item, idx) => (
+                              <div
+                                key={idx}
+                                onClick={() => setSelectedMedia(item)}
+                                className="relative group rounded-lg overflow-hidden border border-gray-200 cursor-zoom-in shadow-sm hover:shadow-lg transition-all duration-300"
+                              >
+                                <div className="overflow-hidden bg-gray-100">
+                                  {item.type === "video" ? (
+                                    <div className="relative w-full h-24 bg-black">
+                                      <video
+                                        src={item.src}
+                                        muted
+                                        loop
+                                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                                      />
+                                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <Play size={20} className="text-white fill-white opacity-80" />
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    <img
+                                      src={item.src}
+                                      alt={item.alt || `Media ${idx}`}
+                                      className="w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500"
+                                    />
+                                  )}
+                                </div>
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                                  <Maximize2 className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={20} />
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </aside>
+                  </div>
+                </div>
+              )
+            })()}
+          </div>
+        )}
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedMedia && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-4 animate-in fade-in duration-300"
+          onClick={() => setSelectedMedia(null)}
+        >
+          <button
+            onClick={() => setSelectedMedia(null)}
+            className="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-200 z-50"
+          >
+            <X size={24} />
+          </button>
+
+          <div
+            className="relative max-w-6xl w-full max-h-[90vh] flex flex-col items-center justify-center animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {selectedMedia.type === 'video' ? (
+              <video
+                src={selectedMedia.src}
+                controls
+                autoPlay
+                className="max-w-full max-h-[85vh] rounded-lg shadow-2xl bg-black"
+              />
+            ) : (
+              <img
+                src={selectedMedia.src}
+                alt={selectedMedia.alt}
+                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+              />
+            )}
+            {selectedMedia.alt && (
+              <p className="mt-6 text-white/90 text-center text-sm font-medium bg-white/10 backdrop-blur-md border border-white/10 px-6 py-3 rounded-full">
+                {selectedMedia.alt}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+
+      <style jsx global>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   )
 }
