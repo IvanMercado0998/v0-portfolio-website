@@ -527,7 +527,7 @@ function Projects() {
                 },
                 {
                     type: "video",
-                    src: "/NAVI.mp4",
+                    src: "/NAVI1.mp4",
                     alt: "System Demo"
                 }
             ]

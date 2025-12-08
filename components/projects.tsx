@@ -93,7 +93,7 @@ export default function Projects() {
       media: [
         { type: "image", src: "/NAVI.png", alt: "Main Dashboard UI" },
         { type: "image", src: "/NAVIapps.png", alt: "Navigation & Apps" },
-        { type: "video", src: "/NAVI.mp4", alt: "System Demo" }
+        { type: "video", src: "/NAVI1.mp4", alt: "System Demo" }
       ],
     },
     {
