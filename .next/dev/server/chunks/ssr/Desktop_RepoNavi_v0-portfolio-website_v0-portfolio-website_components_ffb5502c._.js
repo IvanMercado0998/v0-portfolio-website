@@ -415,7 +415,11 @@ function Projects() {
         "/TitanRamFinalBuild1.jpg",
         "/NAVI.png",
         "/TitanRam3D.png",
-        "/TitanRamTesting .jpg"
+        "/TitanRamTesting .jpg",
+        "/QA.jpg",
+        "/QA1.jpg",
+        "/QA2.jpg",
+        "/QA4.jpg"
     ];
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (selectedMedia) {
@@ -492,48 +496,6 @@ function Projects() {
         },
         {
             id: 2,
-            title: "Automated People Counting System",
-            company: "University (Hardware Capstone)",
-            category: "Digital Electronics",
-            year: "2023–2024",
-            description: "Robust PIR + IC-based counter for tracking event attendance with error-proof design.",
-            overview: "Published prototype featuring dual PIR sensors with entry/exit logic, IC-based up/down counting, and fully modular PCB layout for field repairs.",
-            engineeringWork: [
-                "Designed complete circuit using IC counter logic",
-                "Implemented dual PIR detection and signal conditioning",
-                "Created neat, color-coded PCB layout with modular design",
-                "Built error-proof wiring for easy field repairs",
-                "Ensured expandable architecture for LGU monitoring",
-                "Published within university program"
-            ],
-            tags: [
-                "PIR Sensors",
-                "Digital ICs",
-                "PCB Design",
-                "Analog Electronics",
-                "Signal Conditioning"
-            ],
-            skills: [
-                "Circuit Design",
-                "PCB Layout",
-                "Sensor Integration",
-                "Systems Engineering"
-            ],
-            media: [
-                {
-                    type: "image",
-                    src: "/STMCountingMachine.jpg",
-                    alt: "Prototype"
-                },
-                {
-                    type: "image",
-                    src: "/STMCountingMachine1.jpg",
-                    alt: "Testing"
-                }
-            ]
-        },
-        {
-            id: 3,
             title: "TITAN RAM — Combat Robot Motor Control System",
             company: "University Project",
             category: "Robotics",
@@ -588,7 +550,7 @@ function Projects() {
             ]
         },
         {
-            id: 4,
+            id: 3,
             title: "STM32F429I-DISC1 Counter Machine",
             company: "DSDC Internship (Practicum Project)",
             category: "Microcontroller Systems",
@@ -632,7 +594,7 @@ function Projects() {
             ]
         },
         {
-            id: 5,
+            id: 4,
             title: "IntelliLite, DeapSea and SmartGen Generator Reconfiguration & ATS Integration",
             company: "RVMercado Engineering Corporation",
             category: "Power Systems & Industrial Automation",
@@ -697,7 +659,103 @@ function Projects() {
             ]
         },
         {
+            id: 5,
+            title: "Qmetry Testing",
+            company: "DSDC Internship (Practicum Project)",
+            category: "Quality Assurance Testing",
+            year: "2025",
+            description: "Testing and quality assurance for IOB Devices in a simulated environment.",
+            overview: "Conducted comprehensive testing of IOB Devices using Qmetry to ensure functionality, reliability, and performance in various scenarios.",
+            engineeringWork: [
+                "Implemented testing protocols for IOB Devices",
+                "Supervised simulated environment testing",
+                "Implemented proper test case documentation",
+                "Implemented precise testing procedures",
+                "Suggested improvements based on test results"
+            ],
+            tags: [
+                "Qmetry",
+                "Jira",
+                "Quality Assurance",
+                "Testing ",
+                "IOB Devices"
+            ],
+            skills: [
+                "Device Testing",
+                "Testing Protocols",
+                "Hands-On"
+            ],
+            media: [
+                {
+                    type: "image",
+                    src: "/QA4.jpg",
+                    alt: "Testing with Qmetry @ Jira"
+                },
+                {
+                    type: "image",
+                    src: "/QA3.jpg",
+                    alt: "Testing with Qmetry @ Jira"
+                },
+                {
+                    type: "image",
+                    src: "/QA2.jpg",
+                    alt: "Testing with Qmetry @ Jira"
+                },
+                {
+                    type: "image",
+                    src: "/QA1.jpg",
+                    alt: "Testing with Qmetry @ Jira"
+                },
+                {
+                    type: "image",
+                    src: "/QA.jpg",
+                    alt: "Testing with Qmetry @ Jira"
+                }
+            ]
+        },
+        {
             id: 6,
+            title: "IOB Drivers for  ADC TMUX1309 ",
+            company: "DSDC Internship (Practicum Project)",
+            category: "Driver Programming",
+            year: "2025",
+            description: " Drivers for TMUX1309 multiple Temperature Reading and Analog to Digital Conversion Readings .",
+            overview: "Created Drivers for IOB Devices with multiple Temperature reading via TMUX1309 IC.",
+            engineeringWork: [
+                "Created Driver for TMUX1309 IC",
+                "Analog to Digital Conversion Readings",
+                "Implemented CLI testing for IOB Devices",
+                "Implemented fallback procedures for faulty readings",
+                "Implemented precise reading procedures"
+            ],
+            tags: [
+                "IC Programming",
+                "Drivers",
+                "ADCs",
+                "Schematics",
+                "IOB Devices"
+            ],
+            skills: [
+                "Schematics",
+                "IC Drivers",
+                "Precision Readings",
+                "Code Architecture"
+            ],
+            media: [
+                {
+                    type: "image",
+                    src: "/Drivers.png",
+                    alt: "TMUX1309 Schematics"
+                },
+                {
+                    type: "image",
+                    src: "/Drivers1.png",
+                    alt: "ADC Code Architecture"
+                }
+            ]
+        },
+        {
+            id: 7,
             title: "Win11 Optimizer App",
             company: "NAVICOM Software Division",
             category: "Systems Software",
@@ -729,11 +787,11 @@ function Projects() {
             media: []
         },
         {
-            id: 7,
+            id: 8,
             title: "Course Management System",
-            company: "University Project",
+            company: "DSDC Internship (Practicum Project)",
             category: "Desktop Application",
-            year: "2024",
+            year: "2025",
             description: "Expanded C++ GUI application with file I/O, data persistence, and modular architecture.",
             overview: "Evolution from console application to full GUI-based desktop system with file-based persistence and modular object-oriented design.",
             engineeringWork: [
@@ -819,25 +877,25 @@ function Projects() {
                                 className: "jsx-83037452c623c470" + " " + "w-full h-full object-cover"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                lineNumber: 297,
+                                lineNumber: 325,
                                 columnNumber: 13
                             }, this)
                         }, img, false, {
                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                            lineNumber: 289,
+                            lineNumber: 317,
                             columnNumber: 11
                         }, this)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "jsx-83037452c623c470" + " " + "absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white/60 pointer-events-none"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                        lineNumber: 307,
+                        lineNumber: 335,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                lineNumber: 286,
+                lineNumber: 314,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -848,7 +906,7 @@ function Projects() {
                         children: "Featured Projects"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                        lineNumber: 311,
+                        lineNumber: 339,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -859,12 +917,12 @@ function Projects() {
                                 children: category.charAt(0).toUpperCase() + category.slice(1)
                             }, category, false, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                lineNumber: 316,
+                                lineNumber: 344,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                        lineNumber: 314,
+                        lineNumber: 342,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -879,12 +937,12 @@ function Projects() {
                                     className: "text-gray-800"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                    lineNumber: 339,
+                                    lineNumber: 367,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                lineNumber: 334,
+                                lineNumber: 362,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -910,7 +968,7 @@ function Projects() {
                                                         className: "jsx-83037452c623c470" + " " + "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                        lineNumber: 359,
+                                                        lineNumber: 387,
                                                         columnNumber: 25
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                         src: project.media[0].src,
@@ -918,7 +976,7 @@ function Projects() {
                                                         className: "jsx-83037452c623c470" + " " + "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                        lineNumber: 368,
+                                                        lineNumber: 396,
                                                         columnNumber: 25
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "jsx-83037452c623c470" + " " + "w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center",
@@ -927,17 +985,17 @@ function Projects() {
                                                             children: "No Image"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 376,
+                                                            lineNumber: 404,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                        lineNumber: 375,
+                                                        lineNumber: 403,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                    lineNumber: 356,
+                                                    lineNumber: 384,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -948,7 +1006,7 @@ function Projects() {
                                                             children: project.category
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 383,
+                                                            lineNumber: 411,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -956,7 +1014,7 @@ function Projects() {
                                                             children: project.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 386,
+                                                            lineNumber: 414,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -964,7 +1022,7 @@ function Projects() {
                                                             children: project.description
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 389,
+                                                            lineNumber: 417,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -977,12 +1035,12 @@ function Projects() {
                                                                         children: project.year
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                        lineNumber: 396,
+                                                                        lineNumber: 424,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                    lineNumber: 395,
+                                                                    lineNumber: 423,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -995,41 +1053,41 @@ function Projects() {
                                                                             className: `transition-transform duration-300 ${expandedId === project.id ? 'rotate-180' : ''}`
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                            lineNumber: 403,
+                                                                            lineNumber: 431,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                    lineNumber: 398,
+                                                                    lineNumber: 426,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 394,
+                                                            lineNumber: 422,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                    lineNumber: 382,
+                                                    lineNumber: 410,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                            lineNumber: 354,
+                                            lineNumber: 382,
                                             columnNumber: 17
                                         }, this)
                                     }, project.id, false, {
                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                        lineNumber: 350,
+                                        lineNumber: 378,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                lineNumber: 344,
+                                lineNumber: 372,
                                 columnNumber: 11
                             }, this),
                             canScrollRight && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1041,18 +1099,18 @@ function Projects() {
                                     className: "text-gray-800"
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                    lineNumber: 424,
+                                    lineNumber: 452,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                lineNumber: 419,
+                                lineNumber: 447,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                        lineNumber: 331,
+                        lineNumber: 359,
                         columnNumber: 9
                     }, this),
                     expandedId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1076,7 +1134,7 @@ function Projects() {
                                                             children: project.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 441,
+                                                            lineNumber: 469,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1084,13 +1142,13 @@ function Projects() {
                                                             children: project.overview
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 442,
+                                                            lineNumber: 470,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                    lineNumber: 440,
+                                                    lineNumber: 468,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1103,14 +1161,14 @@ function Projects() {
                                                                     className: "jsx-83037452c623c470" + " " + "w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                    lineNumber: 447,
+                                                                    lineNumber: 475,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 "Engineering Work"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 446,
+                                                            lineNumber: 474,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1123,7 +1181,7 @@ function Projects() {
                                                                             children: "→"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                            lineNumber: 453,
+                                                                            lineNumber: 481,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1131,24 +1189,24 @@ function Projects() {
                                                                             children: work
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                            lineNumber: 454,
+                                                                            lineNumber: 482,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, idx, true, {
                                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                    lineNumber: 452,
+                                                                    lineNumber: 480,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 450,
+                                                            lineNumber: 478,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                    lineNumber: 445,
+                                                    lineNumber: 473,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1159,7 +1217,7 @@ function Projects() {
                                                             children: "Technologies"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 461,
+                                                            lineNumber: 489,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1169,24 +1227,24 @@ function Projects() {
                                                                     children: tag
                                                                 }, tag, false, {
                                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                    lineNumber: 464,
+                                                                    lineNumber: 492,
                                                                     columnNumber: 29
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 462,
+                                                            lineNumber: 490,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                    lineNumber: 460,
+                                                    lineNumber: 488,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                            lineNumber: 439,
+                                            lineNumber: 467,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
@@ -1200,7 +1258,7 @@ function Projects() {
                                                             children: "Project Info"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 477,
+                                                            lineNumber: 505,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1214,7 +1272,7 @@ function Projects() {
                                                                             children: "Company:"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                            lineNumber: 480,
+                                                                            lineNumber: 508,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1222,13 +1280,13 @@ function Projects() {
                                                                             children: project.company
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                            lineNumber: 481,
+                                                                            lineNumber: 509,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                    lineNumber: 479,
+                                                                    lineNumber: 507,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1239,7 +1297,7 @@ function Projects() {
                                                                             children: "Year:"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                            lineNumber: 484,
+                                                                            lineNumber: 512,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1247,13 +1305,13 @@ function Projects() {
                                                                             children: project.year
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                            lineNumber: 485,
+                                                                            lineNumber: 513,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                    lineNumber: 483,
+                                                                    lineNumber: 511,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1264,7 +1322,7 @@ function Projects() {
                                                                             children: "Category:"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                            lineNumber: 488,
+                                                                            lineNumber: 516,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1272,25 +1330,25 @@ function Projects() {
                                                                             children: project.category
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                            lineNumber: 489,
+                                                                            lineNumber: 517,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                    lineNumber: 487,
+                                                                    lineNumber: 515,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 478,
+                                                            lineNumber: 506,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                    lineNumber: 476,
+                                                    lineNumber: 504,
                                                     columnNumber: 23
                                                 }, this),
                                                 project.media && project.media.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1301,7 +1359,7 @@ function Projects() {
                                                             children: "Project Gallery"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 497,
+                                                            lineNumber: 525,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1322,7 +1380,7 @@ function Projects() {
                                                                                         className: "jsx-83037452c623c470" + " " + "w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                                        lineNumber: 508,
+                                                                                        lineNumber: 536,
                                                                                         columnNumber: 39
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1332,18 +1390,18 @@ function Projects() {
                                                                                             className: "text-white fill-white opacity-80"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                                            lineNumber: 515,
+                                                                                            lineNumber: 543,
                                                                                             columnNumber: 41
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                                        lineNumber: 514,
+                                                                                        lineNumber: 542,
                                                                                         columnNumber: 39
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                                lineNumber: 507,
+                                                                                lineNumber: 535,
                                                                                 columnNumber: 37
                                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                                                                 src: item.src,
@@ -1351,12 +1409,12 @@ function Projects() {
                                                                                 className: "jsx-83037452c623c470" + " " + "w-full h-24 object-cover group-hover:scale-110 transition-transform duration-500"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                                lineNumber: 519,
+                                                                                lineNumber: 547,
                                                                                 columnNumber: 37
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                            lineNumber: 505,
+                                                                            lineNumber: 533,
                                                                             columnNumber: 33
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1366,58 +1424,58 @@ function Projects() {
                                                                                 size: 20
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                                lineNumber: 527,
+                                                                                lineNumber: 555,
                                                                                 columnNumber: 35
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                            lineNumber: 526,
+                                                                            lineNumber: 554,
                                                                             columnNumber: 33
                                                                         }, this)
                                                                     ]
                                                                 }, idx, true, {
                                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                                    lineNumber: 500,
+                                                                    lineNumber: 528,
                                                                     columnNumber: 31
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                            lineNumber: 498,
+                                                            lineNumber: 526,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                                    lineNumber: 496,
+                                                    lineNumber: 524,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                            lineNumber: 475,
+                                            lineNumber: 503,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                    lineNumber: 438,
+                                    lineNumber: 466,
                                     columnNumber: 19
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                lineNumber: 437,
+                                lineNumber: 465,
                                 columnNumber: 17
                             }, this);
                         })()
                     }, void 0, false, {
                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                        lineNumber: 431,
+                        lineNumber: 459,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                lineNumber: 310,
+                lineNumber: 338,
                 columnNumber: 7
             }, this),
             selectedMedia && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1431,12 +1489,12 @@ function Projects() {
                             size: 24
                         }, void 0, false, {
                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                            lineNumber: 553,
+                            lineNumber: 581,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                        lineNumber: 549,
+                        lineNumber: 577,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1450,7 +1508,7 @@ function Projects() {
                                 className: "jsx-83037452c623c470" + " " + "max-w-full max-h-[85vh] rounded-lg shadow-2xl bg-black"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                lineNumber: 561,
+                                lineNumber: 589,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                                 src: selectedMedia.src,
@@ -1458,7 +1516,7 @@ function Projects() {
                                 className: "jsx-83037452c623c470" + " " + "max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                lineNumber: 568,
+                                lineNumber: 596,
                                 columnNumber: 15
                             }, this),
                             selectedMedia.alt && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1466,19 +1524,19 @@ function Projects() {
                                 children: selectedMedia.alt
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                                lineNumber: 575,
+                                lineNumber: 603,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                        lineNumber: 556,
+                        lineNumber: 584,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-                lineNumber: 545,
+                lineNumber: 573,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$styled$2d$jsx$40$5$2e$1$2e$6_react$40$19$2e$2$2e$0$2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1488,7 +1546,7 @@ function Projects() {
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/projects.tsx",
-        lineNumber: 284,
+        lineNumber: 312,
         columnNumber: 5
     }, this);
 }
@@ -1496,6 +1554,11 @@ function Projects() {
 "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
+// implement glas morphism ONLY "Send Me a Message"
+// implement proper commented code 
+// create a detailed instruction modal form that sends an email using a free email service like FormSubmit or EmailJS
+//DO NOT CHANGE LOGIC 
+// DO NOT CHANGE THE STYLING 
 __turbopack_context__.s([
     "default",
     ()=>Contact
@@ -1525,7 +1588,7 @@ function Contact() {
         setStatusMessage('');
         try {
             // Using FormSubmit - completely free email service
-            const response = await fetch('https://formsubmit.co/ajax/ivanbmercado0998@gmail.com', {
+            const response = await fetch('https://formsubmit.co/ajax/8b6953da88009881f509223efde2d9e1', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1580,7 +1643,7 @@ function Contact() {
                         children: "Let's Work Together"
                     }, void 0, false, {
                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                        lineNumber: 74,
+                        lineNumber: 80,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1588,7 +1651,7 @@ function Contact() {
                         children: "I'm always interested in hearing about new projects and opportunities in automotive electronics, embedded systems, and engineering innovation."
                     }, void 0, false, {
                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                        lineNumber: 75,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1599,7 +1662,7 @@ function Contact() {
                                 children: "Whether you have a project in mind or just want to chat about engineering challenges, I'd love to hear from you."
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                lineNumber: 81,
+                                lineNumber: 87,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1608,13 +1671,13 @@ function Contact() {
                                 children: "Send Email"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                lineNumber: 85,
+                                lineNumber: 91,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                        lineNumber: 80,
+                        lineNumber: 86,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1628,7 +1691,7 @@ function Contact() {
                                         children: "Email"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 101,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1636,13 +1699,13 @@ function Contact() {
                                         children: "ivanbmercado0998@ gmail.com"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                        lineNumber: 96,
+                                        lineNumber: 102,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                lineNumber: 94,
+                                lineNumber: 100,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1653,7 +1716,7 @@ function Contact() {
                                         children: "LinkedIn"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 106,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1661,13 +1724,13 @@ function Contact() {
                                         children: "www.linkedin.com/in/ivan-mercado-"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                        lineNumber: 101,
+                                        lineNumber: 107,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                lineNumber: 99,
+                                lineNumber: 105,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1678,7 +1741,7 @@ function Contact() {
                                         children: "GitHub"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                        lineNumber: 104,
+                                        lineNumber: 110,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1686,25 +1749,25 @@ function Contact() {
                                         children: "github.com/ IvanMercado0998"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 111,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                lineNumber: 103,
+                                lineNumber: 109,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                        lineNumber: 93,
+                        lineNumber: 99,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                lineNumber: 73,
+                lineNumber: 79,
                 columnNumber: 7
             }, this),
             isModalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1724,7 +1787,7 @@ function Contact() {
                                         children: "Send Me a Message"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 128,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1733,18 +1796,18 @@ function Contact() {
                                         children: "×"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                        lineNumber: 123,
+                                        lineNumber: 129,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                lineNumber: 121,
+                                lineNumber: 127,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                            lineNumber: 120,
+                            lineNumber: 126,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1758,7 +1821,7 @@ function Contact() {
                                             children: "Your Name *"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                            lineNumber: 134,
+                                            lineNumber: 140,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1771,13 +1834,13 @@ function Contact() {
                                             placeholder: "John Doe"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                            lineNumber: 137,
+                                            lineNumber: 143,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                    lineNumber: 133,
+                                    lineNumber: 139,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1788,7 +1851,7 @@ function Contact() {
                                             children: "Your Email *"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                            lineNumber: 149,
+                                            lineNumber: 155,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1801,13 +1864,13 @@ function Contact() {
                                             placeholder: "john@example.com"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                            lineNumber: 152,
+                                            lineNumber: 158,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                    lineNumber: 148,
+                                    lineNumber: 154,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1818,7 +1881,7 @@ function Contact() {
                                             children: "Subject *"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                            lineNumber: 164,
+                                            lineNumber: 170,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1831,13 +1894,13 @@ function Contact() {
                                             placeholder: "Project Inquiry"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                            lineNumber: 167,
+                                            lineNumber: 173,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                    lineNumber: 163,
+                                    lineNumber: 169,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1848,7 +1911,7 @@ function Contact() {
                                             children: "Message *"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                            lineNumber: 179,
+                                            lineNumber: 185,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1861,13 +1924,13 @@ function Contact() {
                                             placeholder: "Tell me about your project or inquiry..."
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                            lineNumber: 182,
+                                            lineNumber: 188,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                    lineNumber: 178,
+                                    lineNumber: 184,
                                     columnNumber: 15
                                 }, this),
                                 statusMessage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1875,7 +1938,7 @@ function Contact() {
                                     children: statusMessage
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                    lineNumber: 194,
+                                    lineNumber: 200,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1888,7 +1951,7 @@ function Contact() {
                                             children: isSending ? 'Sending...' : 'Send Message'
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                            lineNumber: 204,
+                                            lineNumber: 210,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$RepoNavi$2f$v0$2d$portfolio$2d$website$2f$v0$2d$portfolio$2d$website$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1898,36 +1961,36 @@ function Contact() {
                                             children: "Cancel"
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                            lineNumber: 211,
+                                            lineNumber: 217,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                                    lineNumber: 203,
+                                    lineNumber: 209,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                            lineNumber: 132,
+                            lineNumber: 138,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                    lineNumber: 116,
+                    lineNumber: 122,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-                lineNumber: 112,
+                lineNumber: 118,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Desktop/RepoNavi/v0-portfolio-website/v0-portfolio-website/components/contact.tsx",
-        lineNumber: 72,
+        lineNumber: 78,
         columnNumber: 5
     }, this);
 }
