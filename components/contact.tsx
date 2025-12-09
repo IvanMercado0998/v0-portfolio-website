@@ -1,3 +1,9 @@
+// implement glas morphism ONLY "Send Me a Message"
+// implement proper commented code 
+// create a detailed instruction modal form that sends an email using a free email service like FormSubmit or EmailJS
+//DO NOT CHANGE LOGIC 
+// DO NOT CHANGE THE STYLING 
+
 'use client';
 
 import { useState } from 'react';
@@ -26,7 +32,7 @@ export default function Contact() {
 
     try {
       // Using FormSubmit - completely free email service
-      const response = await fetch('https://formsubmit.co/ajax/ivanbmercado0998@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/8b6953da88009881f509223efde2d9e1', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
