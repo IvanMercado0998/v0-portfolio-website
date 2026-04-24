@@ -6,7 +6,9 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "git lfs install && git lfs pull",
+    "vercel-build": "npm run postinstall && npm run build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
