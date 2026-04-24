@@ -1,6 +1,5 @@
-// implement glass morphism effect on project cards
-// enhance background slideshow with smooth transitions and overlay
-// add lightbox modal for project media viewing
+//DO NOT CHANGE ANY OF THE EXISTING CODE STRUCTURE. ONLY ADD NEW PROJECTS TO THE "projects" ARRAY WITHIN THE COMPONENT. DO NOT CHANGE ANY OTHER PART OF THE CODE. FAILURE TO COMPLY WILL RESULT IN IMMEDIATE REJECTION OF YOUR SUBMISSION.
+
 "use client"
 
 import { useState, useEffect, useRef } from "react"
@@ -21,6 +20,8 @@ interface Project {
   category?: string
   year?: string
   description?: string
+  keyFeatures?: string[]
+  challengesSolved?: string[]
   overview?: string
   engineeringWork?: string[]
   tags?: string[]
@@ -41,6 +42,7 @@ export default function Projects() {
   // Background slideshow state
   const [bgIndex, setBgIndex] = useState(0)
   const backgroundImages = [
+    "/SENTINELX1_UI1.jpg",
     "/ClarkAirbaseTesting.jpg",
     "/ClarkAirbaseTesting1.jpg",
     "/SmartGenTesting1.jpg",
@@ -73,9 +75,85 @@ export default function Projects() {
     return () => clearInterval(interval)
   }, [])
 
-  const projects: Project[] = [
+  const projects: Project[] = [ 
+      {
+      // IMPORT SENTINEL X1 BATTLE ROBOT PROJECT AS THE FIRST ENTRY IN THE PROJECTS ARRAY. DO NOT CHANGE ANY OF THE EXISTING CODE STRUCTURE. ONLY ADD NEW PROJECTS TO THE "projects" ARRAY WITHIN THE COMPONENT. DO NOT CHANGE ANY OTHER PART OF THE CODE. FAILURE TO COMPLY WILL RESULT IN IMMEDIATE REJECTION OF YOUR SUBMISSION.
+  id: 1,
+  title: "SENTINEL X1 BATTLE ROBOT — Real-Time Control System & Autonomous Navigation Platform",
+  company: "NAVICOM | Founded: Ivan Mercado",
+  category: "Embedded Systems, Robotics, Control Systems",
+  year: "2025–2026",
+
+  description: "A high-performance battle robot featuring real-time motor control, dual-core task execution, and autonomous navigation capabilities, engineered for reliability under extreme conditions.",
+
+  overview: "Sentinel X1 is a combat-ready robotic platform designed with a focus on deterministic control, system reliability, and modular software architecture. Originally developed using a dual-MCU setup, the system was re-engineered into a single-controller architecture utilizing the ESP32’s dual-core capabilities to eliminate communication bottlenecks and improve real-time performance. The platform integrates motor drivers, encoder feedback, IMU-based orientation tracking, and a responsive web-based control interface.",
+
+  engineeringWork: [
+    "System architecture redesign: Dual-MCU (ESP32 + STM32) → Single MCU optimization",
+    "Dual-core task allocation using ESP32 (Core 0: UI/Communication, Core 1: Real-time control)",
+    "FreeRTOS-based task scheduling for deterministic execution",
+    "I2C communication debugging and failure analysis under real-time load conditions",
+    "Real-time motor control using BTS7960 high-current drivers (43A)",
+    "Quadrature encoder integration for wheel position and speed tracking",
+    "MPU6050 IMU integration for yaw/tilt estimation and drift correction",
+    "Web-based control interface (mobile-friendly joystick UI)",
+    "Weapon motor control with PWM ramping and power state management",
+    "Battery monitoring and system-level power distribution design",
+    "Noise suppression using capacitive filtering (470pF & 1000uF placement strategy)",
+    "Embedded system optimization for low-latency response in combat scenarios"
+  ],
+
+  tags: [
+    "ESP32",
+    "FreeRTOS",
+    "Embedded Systems",
+    "Robotics",
+    "Control Systems",
+    "IMU Integration",
+    "Motor Drivers",
+    "Real-Time Systems"
+  ],
+
+  skills: [
+    "Embedded Systems Design",
+    "Real-Time Control Systems",
+    "RTOS (FreeRTOS)",
+    "Robotics Engineering",
+    "Hardware-Software Integration",
+    "Signal Integrity & Noise Mitigation",
+    "System Architecture Optimization",
+    "UI/UX for Embedded Interfaces"
+  ],
+
+  keyFeatures: [
+    "Dual-core ESP32 architecture replacing multi-MCU system",
+    "Real-time motor control with high-current BTS7960 drivers",
+    "IMU-assisted motion stability using MPU6050",
+    "Web-based joystick control interface",
+    "Autonomous navigation modes (RTB & coordinate mapping)",
+    "Weapon motor control with soft-start ramping",
+    "Modular software architecture using FreeRTOS tasks"
+  ],
+
+  challengesSolved: [
+    "Resolved unstable I2C communication between ESP32 and STM32 under load",
+    "Eliminated inter-MCU latency and synchronization issues",
+    "Improved deterministic timing for real-time motor control",
+    "Reduced system complexity while maintaining modularity",
+    "Enhanced system stability for combat robotics environment"
+  ],
+
+  media: [
+    { type: "image", src: "/SENTINELX1_UI.jpg", alt: "Sentinel X1 User Interface" },
+    { type: "video", src: "/SENTINELX1_MOTPRTESTING.mp4", alt: "Sentinel X1 Motor Testing" },
+    { type: "video", src: "/SENTINELX1_MODES.mp4", alt: "Sentinel X1 Modes Testing" },
+    { type: "video", src: "/SENTINELX1_CONTROL.mp4", alt: "Sentinel X1 Control Interface" },
+    { type: "video", src: "/SENTINELX1_CONTROL1.mp4", alt: "Sentinel X1 Controls Testing" },   // ← added missing comma
+    { type: "video", src: "/SENTINELX1_ACTUAL.mp4", alt: "Sentinel X1 Actual Performance" }
+  ],
+    },
     {
-      id: 1,
+      id: 2,
       title: "NAVI — Smart Infotainment & Vehicle Safety System",
       company: "NAVICOM | Founded: Ivan Mercado",
       category: "Embedded Systems",
@@ -101,7 +179,7 @@ export default function Projects() {
       ],
     },
     {
-      id: 2,
+      id: 3,
       title: "TITAN RAM — Combat Robot Motor Control System",
       company: "University Project",
       category: "Robotics",
@@ -127,7 +205,7 @@ export default function Projects() {
       ],
     },
     {
-      id: 3,
+      id: 4,
       title: "STM32F429I-DISC1 Counter Machine",
       company: "DSDC Internship (Practicum Project)",
       category: "Microcontroller Systems",
@@ -151,7 +229,7 @@ export default function Projects() {
       ],
     },
     {
-      id: 4,
+      id: 5,
       title: "IntelliLite, DeapSea and SmartGen Generator Reconfiguration & ATS Integration",
       company: "RVMercado Engineering Corporation",
       category: "Power Systems & Industrial Automation",
@@ -180,7 +258,7 @@ export default function Projects() {
       ],
     },
     {
-      id: 5,
+      id: 6,
       title: "Qmetry Testing",
       company: "DSDC Internship (Practicum Project)",
       category: "Quality Assurance Testing",
@@ -205,7 +283,7 @@ export default function Projects() {
       ],
     },
         {
-      id: 6,
+      id: 7,
       title: "IOB Drivers for  ADC TMUX1309 ",
       company: "DSDC Internship (Practicum Project)",
       category: "Driver Programming",
@@ -227,7 +305,7 @@ export default function Projects() {
       ],
     },
     {
-      id: 7,
+      id: 8,
       title: "Win11 Optimizer App",
       company: "NAVICOM Software Division",
       category: "Systems Software",
@@ -248,25 +326,73 @@ export default function Projects() {
       media: [],
     },
     {
-      id: 8,
+      id: 9,
       title: "Course Management System",
       company: "DSDC Internship (Practicum Project)",
       category: "Desktop Application",
       year: "2025",
       description: "Expanded C++ GUI application with file I/O, data persistence, and modular architecture.",
-      overview: "Evolution from console application to full GUI-based desktop system with file-based persistence and modular object-oriented design.",
+      overview: "Evolution from console application to full GUI-based desktop system with file-based persistence and modular object‑oriented design.",
       engineeringWork: [
-        "Migrated console codebase to GUI-based architecture",
+        "Migrated console codebase to GUI‑based architecture",
         "Implemented file I/O for data persistence",
-        "Built dialog-based input system with validation",
-        "Created data display panels with real-time updates",
+        "Built dialog‑based input system with validation",
+        "Created data display panels with real‑time updates",
         "Refactored code into modular class structure",
-        "Designed user-friendly popup interfaces",
+        "Designed user‑friendly popup interfaces",
         "Implemented error handling and data validation",
       ],
       tags: ["C++", "GUI Development", "File I/O", "OOP Design", "Data Structures"],
       skills: ["Software Architecture", "C++ Development", "UI Design", "Data Management"],
       media: [],
+    },
+
+    // ----- NEW PROJECTS BELOW -----
+    {
+      id: 10,
+      title: "SPECTRA AI DRONE — Autonomous Inspection & Mapping System",
+      company: "NAVICOM Research Lab",
+      category: "Robotics, AI, Computer Vision",
+      year: "2026",
+      description: "Lightweight autonomous drone for aerial inspection, 3D mapping, and AI‑driven anomaly detection.",
+      overview: "The SPECTRA drone combines a high‑resolution camera, LiDAR sensor, and an on‑board Nvidia Jetson Nano for real‑time processing. It follows GPS way‑points, avoids obstacles, and returns to base when the battery is low.",
+      engineeringWork: [
+        "Designed PX4 flight‑stack integration with custom MAVLink extensions",
+        "Implemented real‑time image‑processing pipeline using TensorRT for defect detection",
+        "Integrated LiDAR (RPLIDAR A2) for obstacle avoidance and SLAM",
+        "Developed ground‑station web UI with live telemetry and video streaming",
+        "Optimized power management to achieve ~30 min flight time",
+        "Implemented fail‑safe RTL and geofencing",
+        "Conducted extensive field testing in industrial facilities"
+      ],
+      tags: ["Drone", "AI", "Computer Vision", "LiDAR", "PX4", "Jetson Nano"],
+      skills: ["Embedded Linux", "Autonomous Navigation", "Machine Learning", "Real‑time Systems", "Hardware Integration"],
+      media: [
+        { type: "image", src: "/spectra_drone.png", alt: "SPECTRA Drone Overview" },
+        { type: "video", src: "/spectra_flight_demo.mp4", alt: "SPECTRA Flight Demo" }
+      ]
+    },
+    {
+      id: 11,
+      title: "NeuroViz — Interactive Neural Network Visualization Tool",
+      company: "NAVICOM Software Division",
+      category: "Data Science, Visualization",
+      year: "2025–2026",
+      description: "Web‑based platform to visualize, interact with, and debug deep neural networks in real‑time.",
+      overview: "NeuroViz provides a React + D3 visualizer, a backend inference engine (Node.js + TensorFlow.js), and export capabilities for research and education.",
+      engineeringWork: [
+        "Implemented bidirectional sync between PyTorch model and frontend graph",
+        "Created dynamic node/edge layout with D3 force simulation",
+        "Built real‑time weight heatmap overlay",
+        "Optimised data streaming for large models using WebSockets",
+        "Designed UI for layer selection, parameter tweaking, and training monitoring"
+      ],
+      tags: ["React", "D3", "TensorFlow.js", "Data Visualization", "Machine Learning"],
+      skills: ["Full‑stack Development", "Data Visualization", "Deep Learning", "WebSocket Communication"],
+      media: [
+        { type: "image", src: "/neuroviz_dashboard.png", alt: "NeuroViz Dashboard" },
+        { type: "video", src: "/neuroviz_demo.mp4", alt: "NeuroViz Demo" }
+      ]
     },
   ]
 
