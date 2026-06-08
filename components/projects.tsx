@@ -1,4 +1,4 @@
-//DO NOT CHANGE ANY OF THE EXISTING CODE STRUCTURE. ONLY ADD NEW PROJECTS TO THE "projects" ARRAY WITHIN THE COMPONENT. DO NOT CHANGE ANY OTHER PART OF THE CODE. FAILURE TO COMPLY WILL RESULT IN IMMEDIATE REJECTION OF YOUR SUBMISSION.
+//DO NOT CHANGE ANY OF THE EXISTcategoryING CODE STRUCTURE. ONLY ADD NEW PROJECTS TO THE "projects" ARRAY WITHIN THE COMPONENT. DO NOT CHANGE ANY OTHER PART OF THE CODE. FAILURE TO COMPLY WILL RESULT IN IMMEDIATE REJECTION OF YOUR SUBMISSION.
 
 "use client"
 
@@ -17,7 +17,8 @@ interface Project {
   id: number
   title: string
   company?: string
-  category?: string
+   category?: string []
+  //list of categories:Power Systems & Industrial Automation,Embedded Systems, Robotics, Control System, Microcontroller, Quality Assurance Testing, Driver Programming, Software, Desktop Application, 
   year?: string
   description?: string
   keyFeatures?: string[]
@@ -43,6 +44,12 @@ export default function Projects() {
   const [bgIndex, setBgIndex] = useState(0)
   const backgroundImages = [
     "/SENTINELX1_UI1.jpg",
+    "/Andon_6.jpg",
+    "/Andon_2.jpg",
+    "/Andon_4.jpg",
+    "/Andon_5.jpg",
+    "/WaterVending_1.jpg",
+    "/WaterVending_2.jpg",
     "/ClarkAirbaseTesting.jpg",
     "/ClarkAirbaseTesting1.jpg",
     "/SmartGenTesting1.jpg",
@@ -76,15 +83,114 @@ export default function Projects() {
   }, [])
 
   const projects: Project[] = [ 
-      {
-      // IMPORT SENTINEL X1 BATTLE ROBOT PROJECT AS THE FIRST ENTRY IN THE PROJECTS ARRAY. DO NOT CHANGE ANY OF THE EXISTING CODE STRUCTURE. ONLY ADD NEW PROJECTS TO THE "projects" ARRAY WITHIN THE COMPONENT. DO NOT CHANGE ANY OTHER PART OF THE CODE. FAILURE TO COMPLY WILL RESULT IN IMMEDIATE REJECTION OF YOUR SUBMISSION.
-  id: 1,
-  title: "SENTINEL X1 BATTLE ROBOT — Real-Time Control System & Autonomous Navigation Platform",
-  company: "NAVICOM | Founded: Ivan Mercado",
-  category: "Embedded Systems, Robotics, Control Systems",
-  year: "2025–2026",
 
-  description: "A high-performance battle robot featuring real-time motor control, dual-core task execution, and autonomous navigation capabilities, engineered for reliability under extreme conditions.",
+{
+  "id": 1,
+  "title": "Modified Andon System Implementation — Real-Time Production Line Alert System",
+  "company": "NAVICOM Electronics Company | RVMercado Engineering Corporation",
+  "category": [
+    "Power Systems", 
+    
+    "Industrial Automation",
+  ],
+  "year": "2026",
+  "description": "Design and implementation of a real-time visual and audible communication system to reduce production downtime and improve response time at Bali Champion Bottlers Inc.",
+  "overview": "Developed and implemented a Modified Andon System integrating push buttons, signal lights, buzzers, and relays to provide immediate alerts during machine abnormalities. The system was designed to improve communication efficiency, reduce downtime, and enhance overall equipment effectiveness (OEE) in high-downtime production areas such as Labeling and Shrinking Machines.",
+  "engineeringWork": [
+    "Designed and implemented a real-time visual and audible Andon system for production line alerts",
+    "Integrated push buttons, signal lights, buzzers, and relays for immediate operator notification",
+    "Configured system logic to detect and signal machine abnormalities in real-time",
+    "Conducted system testing including normal operation, alarm triggering, and feedback verification",
+    "Performed wiring and component integration for seamless system operation",
+    "Calibrated signal indicators to ensure accurate and timely responses",
+    "Documented system functionality and operational procedures for training purposes",
+    "Evaluated system performance post-implementation and identified improvement opportunities"
+  ],
+  "tags": [
+    "Andon System",
+    "Real-Time Communication",
+    "Production Line Monitoring",
+    "Industrial Automation",
+    "Downtime Reduction"
+  ],
+  "skills": [
+    "Industrial Communication Systems",
+    "Real-Time Monitoring",
+    "System Integration",
+    "Production Efficiency",
+    "Electrical Schematics & Testing"
+  ],
+  "media": [
+    { "type": "image", "src": "/Andon_6.jpg", "alt": "Station 1 (In-Progress Operation)" },
+    { "type": "image", "src": "/Andon_4.jpg", "alt": "Station 1 (Alarm)" },
+    { "type": "image", "src": "/Andon_1.jpg", "alt": "Station 2 (In-Progress Operation)" },
+    { "type": "image", "src": "/Andon_3.jpg", "alt": "Station 2 (Alarm)" },
+    { "type": "image", "src": "/Andon_5.jpg", "alt": "Control Panel Integration" }
+  ],
+},
+
+{
+  "id": 2,
+  "title": "Industrial Water Vending Machine System Electrical Rewiring",
+  "company": "NAVICOM Electronics Company",
+  "category": [
+    "Power Systems", 
+    "Industrial Automation",
+    ],
+  "year": "2026",
+  "description": "A Comprehensive troubleshooting work at the water refilling station demonstrated the critical importance of proper electrical design and preventive maintenance in industrial operation",
+  "overview": "Implemented  proper electrical rewiring for water level monitorng, Rverese Osmosid ad Filtration Systems and  for future PLC controller automation via ESP32 PLC Controller",
+  "engineeringWork": [
+    "Control Panel Wiring Reconfiguration - Corrected electrical connections to ensure proper system operation",
+    "UV Ballast Replacement - Diagnosed and replaced faulty UV ballast affecting water purification",
+    "Water Level Switch Circuitry - Fixed improper wiring that was causing main breaker tripping ",
+    "Electrical Protection Improvements - Recommended enhanced fault detection systems for critical equipment",
+    "PLC Integration - Future integration of PLC via ESP32 for future proofing and Indestrial Modernization",
+  ],
+  "tags": [
+    "PLC Integration",
+    "Water Vending Systems",
+    "Industrial Automation",
+    "IoT Integration",
+    "Real-Time Monitoring",
+    "Smart Infrastructure",
+    "Embedded Systems",
+    "Fault Detection",
+    "24/7 Operation",
+    "Industrial Troubleshooting"
+  ],
+  "skills": [
+    "Industrial PLC Programming",
+    "Embedded Systems Development",
+    "IoT Communication Protocols",
+    "Real-Time Monitoring Systems",
+    "Industrial Troubleshooting",
+    "System Integration",
+    "Electrical Engineering",
+    "Smart Infrastructure",
+    "Predictive Maintenance",
+    "Control Systems Design"
+  ],
+  "media": [
+    { "type": "image", "src": "/WaterVending_1.jpg", "alt": "Control Panel Rewiring" },
+    { "type": "image", "src": "/WaterVending_2.jpg", "alt": "Water Filtration System" },
+    { "type": "image", "src": "/WaterVending_5.jpg", "alt": "Reverse Osmosis" }
+  ]
+},
+
+ {
+      // IMPORT SENTINEL X1 BATTLE ROBOT PROJECT AS THE FIRST ENTRY IN THE PROJECTS ARRAY. DO NOT CHANGE ANY OF THE EXISTING CODE STRUCTURE. ONLY ADD NEW PROJECTS TO THE "projects" ARRAY WITHIN THE COMPONENT. DO NOT CHANGE ANY OTHER PART OF THE CODE. FAILURE TO COMPLY WILL RESULT IN IMMEDIATE REJECTION OF YOUR SUBMISSION.
+  "id": 3,
+  "title": "SENTINEL X1 BATTLE ROBOT — Real-Time Control System & Autonomous Navigation Platform",
+  "company": "NAVICOM | Founded: Ivan Mercado",
+  "category": [
+    "Embedded Systems", 
+    "Robotics",
+    "Control Systems"
+  ],
+  "year": "2025–2026",
+
+  "description": "A high-performance battle robot featuring real-time motor control, dual-core task execution, and autonomous navigation capabilities, engineered for reliability under extreme conditions.",
 
   overview: "Sentinel X1 is a combat-ready robotic platform designed with a focus on deterministic control, system reliability, and modular software architecture. Originally developed using a dual-MCU setup, the system was re-engineered into a single-controller architecture utilizing the ESP32’s dual-core capabilities to eliminate communication bottlenecks and improve real-time performance. The platform integrates motor drivers, encoder feedback, IMU-based orientation tracking, and a responsive web-based control interface.",
 
@@ -153,14 +259,19 @@ export default function Projects() {
   ],
     },
     {
-      id: 2,
-      title: "NAVI — Smart Infotainment & Vehicle Safety System",
-      company: "NAVICOM | Founded: Ivan Mercado",
-      category: "Embedded Systems",
-      year: "2024–2025",
-      description: "Tesla-style infotainment and safety enhancement system built from scratch for legacy vehicles.",
-      overview: "A comprehensive vehicle head unit featuring multi-camera blind spot monitoring, reverse camera auto-triggering, Sentry Mode with motion detection, GPS tracking, and local LLM voice commands.",
-      engineeringWork: [
+      "id": 4,
+      "title": "NAVI — Smart Infotainment & Vehicle Safety System",
+      "company": "NAVICOM | Founded: Ivan Mercado",
+      "category": [
+        "Embedded Systems", 
+        "MCU System",
+        "Control Systems",
+        "Systems Software",
+  ],
+      "year": "2024–2025",
+      "description": "Tesla-style infotainment and safety enhancement system built from scratch for legacy vehicles.",
+      "overview": "A comprehensive vehicle head unit featuring multi-camera blind spot monitoring, reverse camera auto-triggering, Sentry Mode with motion detection, GPS tracking, and local LLM voice commands.",
+      "engineeringWork": [
         "ESP32 signal handling for ignition, reverse, turn signals",
         "Multi-camera RTSP stream routing and management",
         "Tesla-style UI design in Figma → Electron implementation",
@@ -179,13 +290,17 @@ export default function Projects() {
       ],
     },
     {
-      id: 3,
-      title: "TITAN RAM — Combat Robot Motor Control System",
-      company: "University Project",
-      category: "Robotics",
-      year: "2025",
-      description: "Complete motor control system for 2-motor combat robot with wireless Bluetooth command.",
-      overview: "Fully documented system integrating Arduino Uno, ESP32, dual BTS7960 motor drivers, and 12V/640RPM motors with wireless smartphone control.",
+      "id": 5,
+      "title": "TITAN RAM — Combat Robot Motor Control System",
+      "company": "University Project",
+      "category": [
+        "Embedded Systems", 
+        "Robotics",
+        "Control Systems"
+        ],
+      "year": "2025",
+      "description": "Complete motor control system for 2-motor combat robot with wireless Bluetooth command.",
+      "overview": "Fully documented system integrating Arduino Uno, ESP32, dual BTS7960 motor drivers, and 12V/640RPM motors with wireless smartphone control.",
       engineeringWork: [
         "Designed high-power motor driver circuits (BTS7960)",
         "Implemented PWM speed control logic for 4-motor coordination",
@@ -205,14 +320,17 @@ export default function Projects() {
       ],
     },
     {
-      id: 4,
-      title: "STM32F429I-DISC1 Counter Machine",
-      company: "DSDC Internship (Practicum Project)",
-      category: "Microcontroller Systems",
-      year: "2025",
-      description: "TouchGFX-powered admin counter system with PIR sensor and secure event logging.",
-      overview: "Embedded system featuring STM32F429 MCU, PIR motion detection, keypad input, LED indicators, PWM buzzer, RTC, and color touchscreen display.",
-      engineeringWork: [
+      "id": 6,
+      "title": "STM32F429I-DISC1 Counter Machine",
+      "company": "DSDC Internship (Practicum Project)",
+      "category": [
+      "MCU Systems", 
+      "Control Systems"
+       ],
+      "year": "2025",
+      "description": "TouchGFX-powered admin counter system with PIR sensor and secure event logging.",
+      "overview": "Embedded system featuring STM32F429 MCU, PIR motion detection, keypad input, LED indicators, PWM buzzer, RTC, and color touchscreen display.",
+      "engineeringWork": [
         "Reconfigured STM32 HAL GPIO driver for custom pin mapping",
         "Integrated TouchGFX framework with real-time callbacks",
         "Designed multi-layer user interface with admin controls",
@@ -221,22 +339,25 @@ export default function Projects() {
         "Configured RTC for accurate event timestamping",
         "Built system state machine for reset/reboot/counting operations",
       ],
-      tags: ["STM32", "TouchGFX", "HAL", "GPIO Interrupts", "PWM", "Embedded UI"],
-      skills: ["Microcontroller Programming", "Real-time Systems", "Interrupt Handling", "UI Development"],
+      "tags": ["STM32", "TouchGFX", "HAL", "GPIO Interrupts", "PWM", "Embedded UI"],
+      "skills": ["Microcontroller Programming", "Real-time Systems", "Interrupt Handling", "UI Development"],
       media: [
         { type: "image", src: "/STMCountingMachine.jpg", alt: "Prototype" },
         { type: "image", src: "/STMCountingMachine1.jpg", alt: "Prototype" },
       ],
     },
     {
-      id: 5,
-      title: "IntelliLite, DeapSea and SmartGen Generator Reconfiguration & ATS Integration",
-      company: "RVMercado Engineering Corporation",
-      category: "Power Systems & Industrial Automation",
-      year: "2024–2025",
-      description: "Reconfiguration, diagnostics, and reprogramming of IntelliLite generator controllers with Automatic Transfer Switch (ATS) integration.",
-      overview: "Performed full-site generator rehabilitation including IntelliLite control logic updates, ATS communication repairs, AC sensing calibration, battery maintenance system installation.",
-      engineeringWork: [
+      "id": 7,
+      "title": "IntelliLite, DeapSea and SmartGen Generator Reconfiguration & ATS Integration",
+      "company": "RVMercado Engineering Corporation",
+        "category": [
+          "Power Systems", 
+          "Industrial Automation",
+          ],
+      "year": "2024–2025",
+      "description": "Reconfiguration, diagnostics, and reprogramming of IntelliLite generator controllers with Automatic Transfer Switch (ATS) integration.",
+      "overview": "Performed full-site generator rehabilitation including IntelliLite control logic updates, ATS communication repairs, AC sensing calibration, battery maintenance system installation.",
+      "engineeringWork": [
         "Reconfigured IntelliLite controller parameters using IntelliConfig",
         "Integrated ATS logic: utility sensing, generator sensing, and transfer sequencing",
         "Calibrated voltage, frequency, and AC phase rotation sensing",
@@ -258,14 +379,16 @@ export default function Projects() {
       ],
     },
     {
-      id: 6,
-      title: "Qmetry Testing",
-      company: "DSDC Internship (Practicum Project)",
-      category: "Quality Assurance Testing",
-      year: "2025",
-      description: "Testing and quality assurance for IOB Devices in a simulated environment.",
-      overview: "Conducted comprehensive testing of IOB Devices using Qmetry to ensure functionality, reliability, and performance in various scenarios.",
-      engineeringWork: [
+      "id": 8,
+      "title": "Qmetry Testing",
+      "company": "DSDC Internship (Practicum Project)",
+      "category": [
+        "Quality Assurance Testing", 
+        ],
+      "year": "2025",
+      "description": "Testing and quality assurance for IOB Devices in a simulated environment.",
+      "overview": "Conducted comprehensive testing of IOB Devices using Qmetry to ensure functionality, reliability, and performance in various scenarios.",
+      "engineeringWork": [
         "Implemented testing protocols for IOB Devices",
         "Supervised simulated environment testing",
         "Implemented proper test case documentation",
@@ -283,14 +406,14 @@ export default function Projects() {
       ],
     },
         {
-      id: 7,
-      title: "IOB Drivers for  ADC TMUX1309 ",
-      company: "DSDC Internship (Practicum Project)",
-      category: "Driver Programming",
-      year: "2025",
-      description: " Drivers for TMUX1309 multiple Temperature Reading and Analog to Digital Conversion Readings .",
-      overview: "Created Drivers for IOB Devices with multiple Temperature reading via TMUX1309 IC.",
-      engineeringWork: [
+      "id": 9,
+      "title": "IOB Drivers for  ADC TMUX1309 ",
+      "company": "DSDC Internship (Practicum Project)",
+      "category":["Driver Programming"], 
+      "year": "2025",
+      "description": " Drivers for TMUX1309 multiple Temperature Reading and Analog to Digital Conversion Readings .",
+      "overview": "Created Drivers for IOB Devices with multiple Temperature reading via TMUX1309 IC.",
+      "engineeringWork": [
         "Created Driver for TMUX1309 IC",
         "Analog to Digital Conversion Readings",
         "Implemented CLI testing for IOB Devices",
@@ -305,14 +428,14 @@ export default function Projects() {
       ],
     },
     {
-      id: 8,
-      title: "Win11 Optimizer App",
-      company: "NAVICOM Software Division",
-      category: "Systems Software",
-      year: "2024–2025",
-      description: "Custom Windows optimization tool with automated cleanup, service management, and modern UI.",
-      overview: "Desktop application built with PowerShell backend and ElectronJS frontend for system-wide Windows optimization and maintenance.",
-      engineeringWork: [
+      "id": 10,
+      "title": "Win11 Optimizer App",
+      "company": "NAVICOM Software Division",
+      "category": ["Systems Software"],
+      "year": "2024",
+      "description": "Custom Windows optimization tool with automated cleanup, service management, and modern UI.",
+      "overview": "Desktop application built with PowerShell backend and ElectronJS frontend for system-wide Windows optimization and maintenance.",
+      "engineeringWork": [
         "Engineered PowerShell scripts for system operations",
         "Designed WinForms UI with responsive controls",
         "Packaged application as Windows .exe using ElectronJS",
@@ -323,17 +446,21 @@ export default function Projects() {
       ],
       tags: ["PowerShell", "WinForms", "ElectronJS", "Figma", "Windows API"],
       skills: ["Systems Programming", "Desktop Development", "UI/UX Design", "Performance Optimization"],
-      media: [],
+      media: [
+        { type: "image", src: "/Win11Opti_1.png", alt: "Dashboard" },
+        { type: "image", src: "/Win11Opti_2.png", alt: "System Log" },
+        { type: "image", src: "/Win11Opti_3.png", alt: "About" },
+      ],
     },
     {
-      id: 9,
-      title: "Course Management System",
-      company: "DSDC Internship (Practicum Project)",
-      category: "Desktop Application",
-      year: "2025",
-      description: "Expanded C++ GUI application with file I/O, data persistence, and modular architecture.",
-      overview: "Evolution from console application to full GUI-based desktop system with file-based persistence and modular object‑oriented design.",
-      engineeringWork: [
+      "id": 11,
+      "title": "Course Management System",
+      "company": "DSDC Internship (Practicum Project)",
+      "category": ["Desktop Application"],
+      "year": "2025",
+      "description": "Expanded C++ GUI application with file I/O, data persistence, and modular architecture.",
+      "overview": "Evolution from console application to full GUI-based desktop system with file-based persistence and modular object‑oriented design.",
+      "engineeringWork": [
         "Migrated console codebase to GUI‑based architecture",
         "Implemented file I/O for data persistence",
         "Built dialog‑based input system with validation",
@@ -347,57 +474,49 @@ export default function Projects() {
       media: [],
     },
 
-    // ----- NEW PROJECTS BELOW -----
-    {
-      id: 10,
-      title: "SPECTRA AI DRONE — Autonomous Inspection & Mapping System",
-      company: "NAVICOM Research Lab",
-      category: "Robotics, AI, Computer Vision",
-      year: "2026",
-      description: "Lightweight autonomous drone for aerial inspection, 3D mapping, and AI‑driven anomaly detection.",
-      overview: "The SPECTRA drone combines a high‑resolution camera, LiDAR sensor, and an on‑board Nvidia Jetson Nano for real‑time processing. It follows GPS way‑points, avoids obstacles, and returns to base when the battery is low.",
-      engineeringWork: [
-        "Designed PX4 flight‑stack integration with custom MAVLink extensions",
-        "Implemented real‑time image‑processing pipeline using TensorRT for defect detection",
-        "Integrated LiDAR (RPLIDAR A2) for obstacle avoidance and SLAM",
-        "Developed ground‑station web UI with live telemetry and video streaming",
-        "Optimized power management to achieve ~30 min flight time",
-        "Implemented fail‑safe RTL and geofencing",
-        "Conducted extensive field testing in industrial facilities"
+        {
+      "id": 12,
+      "title": "Robotic Arm Control System for Precision Manufacturing",
+      "company": "NAVICOM Robotics Division",
+      "category": ["Robotics", "Control Systems"],
+      "year": "soon",
+      "description": "Embedded control system for precise robotic arm manipulation in manufacturing environments.",
+      "overview": "The control system integrates real-time kinematics, sensor fusion, and adaptive control algorithms to ensure accurate and efficient robotic operation.",
+      "engineeringWork": [
+        "Designed real-time kinematic control algorithms for multi-joint robotic arm",
+        "To Implement sensor fusion techniques for improved positional accuracy",
+        "To Develop adaptive control strategies to compensate for dynamic load changes",
+        "To Create intuitive user interaction via voice commands for system monitoring and control",
+        "To Conduct extensive testing in simulated and real-world manufacturing scenarios to validate performance and reliability"
       ],
-      tags: ["Drone", "AI", "Computer Vision", "LiDAR", "PX4", "Jetson Nano"],
-      skills: ["Embedded Linux", "Autonomous Navigation", "Machine Learning", "Real‑time Systems", "Hardware Integration"],
+      tags: ["Robotics", "Control Systems", "Sensor Fusion", "Adaptive Control", "Voice Interaction"],
+      skills: ["Robotic Control Systems", "Sensor Integration", "Adaptive Algorithms", "Voice Command Interfaces", "Manufacturing Automation"],
       media: [
-        { type: "image", src: "/spectra_drone.png", alt: "SPECTRA Drone Overview" },
-        { type: "video", src: "/spectra_flight_demo.mp4", alt: "SPECTRA Flight Demo" }
-      ]
-    },
-    {
-      id: 11,
-      title: "NeuroViz — Interactive Neural Network Visualization Tool",
-      company: "NAVICOM Software Division",
-      category: "Data Science, Visualization",
-      year: "2025–2026",
-      description: "Web‑based platform to visualize, interact with, and debug deep neural networks in real‑time.",
-      overview: "NeuroViz provides a React + D3 visualizer, a backend inference engine (Node.js + TensorFlow.js), and export capabilities for research and education.",
-      engineeringWork: [
-        "Implemented bidirectional sync between PyTorch model and frontend graph",
-        "Created dynamic node/edge layout with D3 force simulation",
-        "Built real‑time weight heatmap overlay",
-        "Optimised data streaming for large models using WebSockets",
-        "Designed UI for layer selection, parameter tweaking, and training monitoring"
-      ],
-      tags: ["React", "D3", "TensorFlow.js", "Data Visualization", "Machine Learning"],
-      skills: ["Full‑stack Development", "Data Visualization", "Deep Learning", "WebSocket Communication"],
-      media: [
-        { type: "image", src: "/neuroviz_dashboard.png", alt: "NeuroViz Dashboard" },
-        { type: "video", src: "/neuroviz_demo.mp4", alt: "NeuroViz Demo" }
+        { type: "image", src: "/neuroviz_dashboard.png", alt: "Robotic Arm Control System Dashboard" }, //missing image sources 
+        { type: "video", src: "/neuroviz_demo.mp4", alt: "Robotic Arm Control System Demo" } //missing image sources
       ]
     },
   ]
 
-  const categories = ["all", ...Array.from(new Set(projects.map((p) => p.category)))]
-  const filteredProjects = selectedCategory === "all" ? projects : projects.filter((p) => p.category === selectedCategory)
+// Fix the categories array generation
+const allCategories = projects.flatMap((p) => {
+  if (!p.category) return [];
+  return Array.isArray(p.category) ? p.category : [p.category];
+}).filter(Boolean);
+
+const categories = ["all", ...new Set(allCategories)];
+
+// Fix the filtering logic
+const filteredProjects = selectedCategory === "all" 
+  ? projects 
+  : projects.filter((project) => {
+      if (!project.category) return false;
+      if (Array.isArray(project.category)) {
+        return project.category.includes(selectedCategory);
+      }
+      return project.category === selectedCategory;
+    });
+
 
   const updateScrollButtons = () => {
     if (sliderRef.current) {
@@ -464,23 +583,22 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold mb-8 text-black drop-shadow-sm">Featured Projects</h2>
 
-        {/* Category Filter */}
-        <div className="mb-10 flex flex-wrap gap-2">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                selectedCategory === category
-                  ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg scale-105"
-                  : "bg-white/90 backdrop-blur-sm text-black hover:bg-white border border-gray-200 hover:border-gray-300 shadow-sm"
-              }`}
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </button>
-          ))}
-        </div>
-
+{/* Category Filter */}
+<div className="mb-10 flex flex-wrap gap-2">
+  {categories.map((category) => (
+    <button
+      key={category}
+      onClick={() => setSelectedCategory(category)}
+      className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+        selectedCategory === category
+          ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg scale-105"
+          : "bg-white/90 backdrop-blur-sm text-black hover:bg-white border border-gray-200 hover:border-gray-300 shadow-sm"
+      }`}
+    >
+      {category.charAt(0).toUpperCase() + category.slice(1)}
+    </button>
+  ))}
+</div>
         {/* Horizontal Slider */}
         <div className="relative">
           {/* Left Arrow */}

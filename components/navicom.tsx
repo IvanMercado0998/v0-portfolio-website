@@ -1,8 +1,5 @@
 // components/navicom.tsx
 // DO NOT CHANGE LOGIC CALLS
-// The logo now slides in from far‑left (outside the viewport), grows a little
-// and then stays positioned in the left column as the user scrolls –
-// just like a carousel effect.
 
 "use client"
 
@@ -138,7 +135,7 @@ export default function NAVICOM() {
                 </h4>
                 <p className="text-white/60">
                   We analyze, design, and build with precision and care,
-                  ensuring every automotive system aligns with performance and
+                  ensuring every system aligns with performance and
                   user goals. Our workflow blends hardware prototyping,
                   firmware development, and UI/UX refinement in a single,
                   seamless pipeline.
@@ -150,8 +147,8 @@ export default function NAVICOM() {
                   Technology Stack
                 </h4>
                 <p className="text-white/60">
-                  Modern embedded platforms (ESP32, STM32, Jetson Nano),
-                  automotive communication protocols, real‑time operating
+                  Modern embedded platforms (ESP32, STM32, Raspberry Pi, Arduino), C/C++ firmware, Python for tooling, and
+                  communication protocols, real‑time operating
                   systems, and cloud‑enabled services that enable scalable,
                   reliable deployments.
                 </p>

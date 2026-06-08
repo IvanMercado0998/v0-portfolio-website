@@ -1,1 +1,17 @@
 node_modules
+# -------------------------------------------------
+# Build artefacts (Next.js, Vite, etc.)
+# -------------------------------------------------
+.next/
+out/
+dist/
+.cache/
+# -------------------------------------------------
+# Node dependencies (optional but strongly recommended)
+# -------------------------------------------------
+node_modules/
+# -------------------------------------------------
+# Miscellaneous files you never want to version‑control
+# -------------------------------------------------
+*.log
+*.tmp
