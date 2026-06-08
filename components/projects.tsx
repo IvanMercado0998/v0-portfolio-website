@@ -89,8 +89,7 @@ export default function Projects() {
   "title": "Modified Andon System Implementation — Real-Time Production Line Alert System",
   "company": "NAVICOM Electronics Company | RVMercado Engineering Corporation",
   "category": [
-    "Power Systems", 
-    
+    "Power Systems",
     "Industrial Automation",
   ],
   "year": "2026",
