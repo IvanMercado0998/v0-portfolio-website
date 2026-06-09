@@ -1,6 +1,7 @@
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-
+//linkeding error 404 refactor the code for seamless transition to linkedin profile
+//Sitemap, licenses, and other legal links should be added. implement hyperlink or create a new page for these sections to provide users with easy access to important information. 
   return (
     <footer className="bg-black border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -29,17 +30,18 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-4">Connect</h3>
             <ul className="space-y-2 text-white/60 text-sm">
               <li>
-                <a href="https://github.com/IvanMercado0998" className="hover:text-white transition-colors">  
+                <a href="https://github.com/IvanMercado0998" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   GitHub
                 </a>
               </li>
               <li>
-                <a href="www.linkedin.com/in/ivan-mercado-" className="hover:text-white transition-colors">
-                  LinkedIn
+                <a href="https://www.linkedin.com/in/ivan-mercado-navicom/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                 LinkedIn
                 </a>
+
               </li>
               <li>
-                <a href="https://www.facebook.com/ivan.mercado.7127" className="hover:text-white transition-colors">
+                <a href="https://www.facebook.com/ivan.mercado.7127" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   Facebook
                 </a>
               </li>
@@ -69,7 +71,7 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-4">Legal</h3>
             <ul className="space-y-2 text-white/60 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="hover:text-white transition-colors"> 
                   Privacy
                 </a>
               </li>
